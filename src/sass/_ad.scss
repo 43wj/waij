@@ -1,0 +1,20 @@
+.ad {
+    width: 100%;
+}
+
+.ad .ad-list {
+    width: 1190px;
+    height: 160px;
+    margin: 0 auto;
+    background-color: plum;
+}
+
+.ad .ad-list a {
+    display: inline-block;
+    margin-left: 6px;
+}
+
+.ad .ad-list a img {
+    width: 386px;
+    height: 160px;
+}
