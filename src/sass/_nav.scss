@@ -1,149 +1,202 @@
-a {
-    text-decoration: none;
+$t:top;
+$b:bottom;
+$l:left;
+$r:right;
+@mixin w($width) {
+    width: $width;
 }
 
-.nav {
-    height: 101px;
+@mixin h($height) {
+    height: $height;
+}
+
+.top_nav {
+    @include h(101px);
     background-color: #FFF;
-    border-bottom: 3px solid #de2f3c;
-    box-shadow: 0 3px 3px #CCC
-}
-
-.nav .logo_wm {
-    display: block;
-    float: left;
-    width: 183px;
-    text-align: center;
-    height: 72px;
-    padding-top: 29px;
-    background-color: #c20315;
-    margin-bottom: -3px
-}
-
-.nav .logo_wm img {
-    width: 120px;
-    height: 41px;
-}
-
-.nav .logo_shop {
-    display: block;
-    float: left;
-    margin: 37px 0 0 34px
-}
-
-.nav .logo_shop img {
-    width: 55px;
-    height: 27px;
-}
-
-.nav .all-goods {
-    float: left;
-    position: relative;
-    width: 175px;
-    margin-left: 50px;
-    text-indent: 19px;
-    z-index: 1
-}
-
-.nav .all-goods .text {
-    height: 101px;
-    line-height: 101px;
-    font-size: 15px;
-    cursor: pointer
-}
-
-.nav .all-goods .text span {
-    display: inline-block;
-    width: 15px;
-    height: 13px;
-    margin-right: 7px;
-    background: url(../img/base.png) no-repeat -24px 0;
-    vertical-align: -1px
-}
-
-.nav .all-goods ul {
-    position: absolute;
-    top: 101px;
-    left: 0;
-    padding-bottom: 10px;
-    display: none;
-    width: 100%;
-    font-size: 14px;
-    background-color: #FFF;
-    box-shadow: 0 2px 3px #CCC
-}
-
-.nav .nav1 {
-    float: left;
-    margin-top: 40px
-}
-
-.nav .nav1 li {
-    float: left;
-    padding: 0 15px;
-    font-size: 15px
-}
-
-.nav .nav1 li a {
-    color: #474747
-}
-
-.nav .nav1 li a:hover {
-    color: #e90404
-}
-
-.nav-search {
-    float: right;
-    position: relative;
-    width: 320px;
-    height: 41px;
-    margin-top: 30px;
-    z-index: 1
-}
-
-.nav-search .text {
-    float: left;
-    width: 263px;
-    height: 39px;
-    line-height: 39px;
-    padding: 0 5px;
-    border: 1px solid #CCC;
-    border-right: 0
-}
-
-.nav-search .btn {
-    float: right;
-    width: 46px;
-    height: 41px;
-    border: 0;
-    background: #e32332 url(../images/search.png) no-repeat center;
-    cursor: pointer
-}
-
-.nav-search .btn:hover {
-    background-color: #C00
-}
-
-.nav-search .keyword {
-    position: absolute;
-    top: 1px;
-    right: 56px;
-    height: 30px;
-    padding-top: 9px
-}
-
-.nav-search .keyword a {
-    display: inline-block;
-    padding: 3px 5px;
-    background-color: #EEE
-}
-
-.nav-search .keyword_list {
-    position: absolute;
-    top: 40px;
-    left: 1px;
-    width: 270px;
-    display: none;
-    background-color: #FFF;
-    border: 1px solid #CCC
+    border-#{b}: 3px solid #de2f3c;
+    box-shadow: 0 3px 3px #CCC;
+    .wrap {
+        @include w(1190px);
+        margin: 0 auto;
+    }
+    a {
+        text-decoration: none;
+        color: #666;
+        &:hover {
+            text-decoration: none;
+            color: #e90404
+        }
+    }
+    a.on {
+        text-decoration: none;
+        color: #e90404
+    }
+    .f_left {
+        float: $l;
+    }
+    .f_right {
+        float: $r;
+    }
+    .logo {
+        display: block
+    }
+    .logo_wm {
+        @include w(183px);
+        text-align: center;
+        @include h(72px);
+        padding-#{$t}: 29px;
+        background-color: #c20315;
+        margin-#{b}: -3px
+    }
+    .logo_shop {
+        margin: 37px 0 0 34px
+    }
+    .all_wares {
+        position: relative;
+        @include w(175px);
+        margin-#{$l}: 50px;
+        text-indent: 19px;
+        z-index: 1;
+        .text {
+            @include h(101px);
+            line-height: 101px;
+            font-size: 15px;
+            cursor: pointer;
+            span {
+                display: inline-block;
+                @include w(15px);
+                @include h(13px);
+                margin-#{$r}: 7px;
+                background: url(../img/base.png) no-repeat -24px 0;
+                vertical-align: -1px
+            }
+        }
+        ul {
+            position: absolute;
+            #{$t}: 101px;
+            #{$l}: 0;
+            padding-#{$b}: 10px;
+            display: none;
+            @include w(100%);
+            font-size: 14px;
+            background-color: #FFF;
+            box-shadow: 0 2px 3px #CCC
+        }
+        li {
+            position: relative;
+            a {
+                display: block;
+                @include w(155px);
+                padding-#{$r}: 20px;
+                @include h(40px);
+                line-height: 40px;
+                background-color: #FFF;
+                color: #474747;
+                position: relative;
+                em {
+                    position: absolute;
+                    #{$t}: 15px;
+                    #{$r}: 10px;
+                    @include w(6px);
+                    @include h(10px);
+                    overflow: hidden;
+                    background: url(../img/base.png) no-repeat -54px 0
+                }
+                &:hover {
+                    background-color: #f5f5f5;
+                    color: #e90404
+                }
+                &:hover em {
+                    background-position: -60px 0
+                }
+            }
+            &:hover dl {
+                display: block;
+            }
+        }
+        &:hover ul {
+            display: block;
+        }
+        dl {
+            position: absolute;
+            #{$t}: 0;
+            #{$l}: 175px;
+            display: none
+        }
+    }
+    .nav {
+        margin-#{$t}: 40px;
+        li {
+            float: $l;
+            padding: 0 15px;
+            font-size: 15px;
+            a {
+                color: #474747;
+                &:hover {
+                    color: #e90404
+                }
+            }
+        }
+    }
+    .header_search {
+        position: relative;
+        @include w(320px);
+        @include h(41px);
+        margin-#{$t}: 30px;
+        z-index: 1;
+        .text {
+            float: $l;
+            @include w(263px);
+            @include h(39px);
+            line-height: 39px;
+            padding: 0 5px;
+            border: 1px solid #CCC;
+            border-#{$r}: 0;
+        }
+        .btn {
+            float: $r;
+            @include w(46px);
+            @include h(41px);
+            border: 0;
+            background: #e32332 url(http://static.wanmei.com/shop/images/search.png) no-repeat center;
+            cursor: pointer;
+            &:hover {
+                background-color: #C00
+            }
+        }
+        .keyword {
+            position: absolute;
+            #{$t}: 1px;
+            #{$r}: 56px;
+            height: 30px;
+            padding-#{$t}: 9px;
+            a {
+                display: inline-block;
+                padding: 3px 5px;
+                background-color: #EEE
+            }
+        }
+        .keyword_list {
+            position: absolute;
+            #{$t}: 40px;
+            #{$l}: 1px;
+            @include w(270px);
+            display: none;
+            background-color: #FFF;
+            border: 1px solid #CCC;
+            a {
+                display: block;
+                padding: 0 10px;
+                @include h(30px);
+                line-height: 30px;
+                &:hover {
+                    background-color: #f5f5f5
+                }
+            }
+            span {
+                float: right;
+                color: #999
+            }
+        }
+    }
 }

@@ -1,24 +1,150 @@
-.area-dota2 {
+.area_dota2 {
     width: 100%;
     height: 727px;
 }
 
-.area-dota2 .temp-wrap {
-    margin: 0 auto;
-    width: 1190px;
-    height: 727px;
-    // background-color: red;
+a {
+    text-decoration: none;
+    color: #666
 }
 
-.area-dota2 .temp-wrap .dota2-title {
-    width: 1190px;
-    height: 40px;
-}
-
-.area-dota2 .temp-wrap .f-left {
+.f_left {
     float: left;
 }
 
-.area-dota2 .temp-wrap .more {
+.f_right {
     float: right;
+}
+
+.area .wrap {
+    margin: 0 auto;
+    width: 1190px;
+    height: 727px;
+}
+
+.area .wrap .title_main {
+    width: 1190px;
+    height: 40px;
+    padding: 37px 0 20px 0;
+    font-size: 28px;
+    overflow: hidden;
+}
+
+.area .wrap .title_main .icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+.area .wrap .title_main .icon img {
+    width: 35px;
+    height: 35px;
+}
+
+.area .wrap .title_main div {
+    margin-left: 116px;
+}
+
+.area .wrap .title_main div a {
+    float: left;
+    margin-right: 5px;
+    padding: 5px 20px 0 20px;
+    font-size: 16px;
+}
+
+.area .wrap .title_main .on,
+.area .wrap .title_main .on:hover {
+    border-bottom: 3px solid #de2f3c;
+    color: #e90303;
+}
+
+.area .wrap .title_main .on {
+    display: block;
+    padding-bottom: 5px;
+    color: #666;
+}
+
+.area .wrap .wrap .more {
+    float: right;
+}
+
+.area .wrap .title_main .more {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.area .wrap .title_main .more span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    background: url(../img/base.png) no-repeat -90px 0;
+    vertical-align: -5px;
+}
+
+.area .wrap .title_main .more:hover {
+    color: #e90303;
+}
+
+.area .wrap .title_main .more:hover span {
+    background: url(../img/base.png) no-repeat -111px 0;
+}
+
+.area .wrap .content_main {
+    width: 1190px;
+    height: 630px;
+}
+
+.area .wrap .content_main .ad {
+    width: 226px;
+    height: 614px;
+    margin: 0 15px 15px 0;
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    color: #666;
+}
+
+.area .tempWrap {
+    overflow: hidden;
+    position: relative;
+    width: 949px
+}
+
+.area .tempWrap .content {
+    width: 949px;
+    left: 0px;
+    position: relative;
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+}
+
+.area .tempWrap .content .main {
+    float: left;
+    width: 949px;
+}
+
+.area .list a img {
+    width: 160px;
+    height: 160px;
+}
+
+.area .area_slide {
+    position: relative;
+    width: 467px;
+    height: 300px;
+    margin-right: 15px;
+    overflow: hidden;
+    float: left;
+    border: 1px solid #de2f3c;
+}
+
+.in {
+    transition: all .2s linear;
 }

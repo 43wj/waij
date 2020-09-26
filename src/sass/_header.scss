@@ -1,256 +1,74 @@
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-html,
-body {
-    font-size: 12px;
-    font-family: "Microsoft YaHei",
-}
-
-body {
-    background-color: #f5f5f5;
-    color: #474747;
-    min-width: 1300px
-}
-
-.wrap {
-    width: 1190px;
-    margin: 0 auto
-}
-
-.header {
-    height: 33px;
-    background-color: #474747;
-    color: #CCC
-}
-
-.welcome {
-    margin-top: 7px;
-    float: left;
-}
-
-.header-cart {
-    width: 138px;
-    position: relative;
-    float: right;
-    z-index: 2;
-}
-
-.header-cart .text {
-    height: 33px;
-    line-height: 33px;
-    background-color: #1e1e1e;
-    text-align: center;
-    cursor: pointer;
-    display: block
-}
-
-.header-cart .curr {
-    background-color: #e32332;
-    color: #FFF
-}
-
-.header-cart .text span {
-    color: #db313e;
-    font-weight: bold;
-    font-family: Arial
-}
-
-.header-cart .curr span {
-    color: #FFF
-}
-
-.header-cart .text .icon {
-    display: inline-block;
-    margin-right: 8px;
-    width: 20px;
-    height: 14px;
-    overflow: hidden;
-    background: url(../images/base.png) no-repeat -164px -20px;
-    vertical-align: -2px
-}
-
-.header-cart .curr .icon {
-    background-position: -164px -38px
-}
-
-.header-cart .cart_list {
-    position: absolute;
-    top: 33px;
-    right: 0;
-    width: 350px;
-    background-color: #fafafa;
-    z-index: 1;
-    display: none;
-    box-shadow: 0 2px 3px #CCC
-}
-
-.header-cart .shop_list {
-    position: relative;
-    top: 0;
-    left: 0;
-    padding: 17px 17px 0 17px;
-    max-height: 400px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    background-color: #FFF
-}
-
-.header-cart .shop_list li {
-    zoom: 1;
-    overflow: hidden;
-    position: relative;
-    padding: 13px 5px 3px 5px;
-    border-top: 1px solid #e0e0e0
-}
-
-.header-cart .shop_list li:first-child {
-    border-top: 0
-}
-
-.header-cart .shop_list li a {
-    display: inline-block;
-    padding-bottom: 10px;
-    width: 100%
-}
-
-.header-cart .shop_list li .suit {
-    word-wrap: break-word;
-    word-break: break-all;
-    height: 18px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    color: #666
-}
-
-.header-cart .shop_list li .suit .suit_pre {
-    color: #e90404
-}
-
-.header-cart .shop_list li img {
-    margin-right: 10px;
-    border: 1px solid #ddd;
-    width: 50px;
-    height: 50px
-}
-
-.header-cart .shop_list .title {
-    width: 100px;
-    padding-right: 15px
-}
-
-.header-cart .shop_list .title .name {
-    color: #666;
-    display: block;
-    max-height: 32px;
-    overflow: hidden;
-    word-wrap: break-word;
-    word-break: break-all
-}
-
-.header-cart .shop_list .title .size {
-    color: #999;
-    display: block;
-    max-height: 18px;
-    overflow: hidden;
-    word-wrap: break-word;
-    word-break: break-all
-}
-
-.header-cart .shop_list li:hover .name {
-    color: #e90404
-}
-
-.header-cart .shop_list .num {
-    margin-right: 20px;
-    color: #474747
-}
-
-.header-cart .shop_list .close {
-    position: absolute;
-    top: 17px;
-    right: 0;
-    width: 8px;
-    height: 8px;
-    overflow: hidden;
-    background: url(../images/base.png) no-repeat -292px 0;
-    cursor: pointer
-}
-
-.header-cart .shop_list .close:hover {
-    background-position: -292px -9px
-}
-
-.header-cart .shop_list .cart-custom-icon {
-    position: absolute;
-    top: 13px;
-    left: 5px;
-    font-size: 12px;
-    color: #FFF;
-    background-color: #1d9ef2
-}
-
-.header-cart .list_null {
-    padding: 49px 0 37px 0;
-    text-align: center;
-    font-size: 14px;
-    color: #666
-}
-
-.header-cart .shop_result {
-    padding: 22px 17px 15px 17px;
-    color: #666
-}
-
-.header-cart .shop_result .num span {
-    padding: 0 3px;
-    color: #474747
-}
-
-.header-cart .shop_result .total {
-    font-size: 24px;
-    color: #e90404
-}
-
-.header-cart .shop_result a {
-    width: 132px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    background-color: #e32332;
-    font-size: 14px;
-    color: #FFF
-}
-
-.header-cart .shop_result a:hover {
-    background-color: #C00
-}
-
-.header dl {
-    margin: 11px 35px 0 0;
-    float: right;
-}
-
-.header dl a {
-    display: inline-block;
-    color: #CCC
-}
-
-.header dl a:hover {
-    color: #FFF
-}
-
-.header dt,
-.header dd {
-    float: left;
-    padding: 0 7px;
-    height: 11px;
-    line-height: 11px
-}
-
-.header dd {
-    border-left: 1px solid #666
-}
+    $t:top;
+    $b:bottom;
+    $l:left;
+    $r:right;
+    @mixin w($width) {
+        width: $width;
+    }
+    
+    @mixin h($height) {
+        height: $height;
+    }
+    
+    .header {
+        @include h(33px);
+        background-color: #474747;
+        color: #CCC;
+        .wrap {
+            @include w(1190px);
+            margin: 0 auto;
+            .welcome {
+                margin-#{$t}: 7px;
+                float: $l;
+            }
+            .header-cart {
+                @include w(138px);
+                position: relative;
+                float: $r;
+                z-index: 2;
+                .text {
+                    @include h(33px);
+                    line-height: 33px;
+                    background-color: #1e1e1e;
+                    text-align: center;
+                    cursor: pointer;
+                    display: block;
+                    span {
+                        color: #db313e;
+                        font-weight: bold;
+                        font-family: Arial
+                    }
+                    .icon {
+                        display: inline-block;
+                        margin-#{$r}: 8px;
+                        @include w(20px);
+                        @include h(14px);
+                        overflow: hidden;
+                        background: url(../img/base.png) no-repeat -164px -20px;
+                        vertical-align: -2px
+                    }
+                }
+            }
+            dl {
+                margin: 11px 35px 0 0;
+                float: $r;
+                a {
+                    display: inline-block;
+                    color: #CCC;
+                    &:hover {
+                        color: #FFF;
+                    }
+                }
+            }
+        }
+        dt,
+        dd {
+            float: $l;
+            padding: 0 7px;
+            @include h(11px);
+            line-height: 11px
+        }
+        dd {
+            border-#{$l}: 1px solid #666
+        }
+    }

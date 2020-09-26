@@ -1,141 +1,122 @@
+$t:top;
+$b:bottom;
+$l:left;
+$r:right;
+@mixin w($width) {
+    width: $width;
+}
+
+@mixin h($height) {
+    height: $height;
+}
+
 .rightfloor {
     position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 35px;
+    #{$t}: 0;
+    #{$r}: 0;
+    @include h(100%);
+    @include w(35px);
     background-color: #0a0a0a;
     text-align: center;
-    z-index: 2
-}
-
-.rightfloor a {
-    text-decoration: none;
-    display: block;
-    color: #FFF;
-    transition: all .2s linear
-}
-
-.rightfloor a:hover {
-    background-color: #e32330
-}
-
-.rightfloor a span {
-    display: inline-block
-}
-
-.rightfloor dl {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    width: 100%;
-    margin-top: -140px
-}
-
-.rightfloor .go_top {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    width: 35px;
-    height: 35px
-}
-
-.rightfloor .go_top a span {
-    width: 24px;
-    height: 22px;
-    margin-top: 6px;
-    background: url(../img/base.png) no-repeat -228px -20px
-}
-
-.rightfloor dd {
-    position: relative;
-    padding-bottom: 6px
-}
-
-.rightfloor .tip {
-    position: absolute;
-    left: -128px;
-    top: 0;
-    width: 71px;
-    padding-left: 15px;
-    height: 37px;
-    line-height: 37px;
-    display: none;
-    opacity: 0;
-    text-align: left;
-    background: url(../img/base.png) no-repeat -94px -90px;
-    color: #FFF
-}
-
-.rightfloor .tip a:hover {
-    background: 0
-}
-
-.rightfloor .center a,
-.rightfloor .my_like a,
-.rightfloor .online a,
-.rightfloor .go_top a {
-    height: 35px
+    z-index: 2;
+    a {
+        text-decoration: none;
+        display: block;
+        color: #FFF;
+        transition: all .2s linear;
+        &:hover {
+            background-color: #e32330
+        }
+        span {
+            display: inline-block
+        }
+    }
+    dl {
+        position: absolute;
+        #{$t}: 50%;
+        #{$l}: 0;
+        @include w(100%);
+        margin-#{$t}: -140px;
+        dd {
+            position: relative;
+            padding-#{$b}: 6px
+        }
+    }
+    .go_top {
+        position: absolute;
+        #{$b}: 50px;
+        #{$l}: 0;
+        @include w(35px);
+        @include h(35px);
+        a span {
+            @include w(24px);
+            @include h(22px);
+            margin-#{$t}: 6px;
+            background: url(../img/base.png) no-repeat -228px -20px
+        }
+    }
+    .center a,
+    .my_like a,
+    .online a,
+    .go_top a {
+        @include h(35px);
+    }
 }
 
 .rightfloor .center a span {
-    width: 18px;
-    height: 18px;
-    margin-top: 8px;
+    @include w(18px);
+    @include h(18px);
+    margin-#{$t}: 8px;
     background: url(../img/base.png) no-repeat -228px -74px
 }
 
 .rightfloor .my_like a span {
-    width: 19px;
-    height: 15px;
-    margin-top: 11px;
+    @include w(19px);
+    @include h(15px);
+    margin-#{$t}: 11px;
     background: url(../img/base.png) no-repeat -228px -42px
 }
 
 .rightfloor .right-cart a span {
-    width: 22px;
+    @include w(22px);
     margin: 0 auto;
     padding: 13px 2px;
     font-size: 13px;
-    border-top: 1px solid #323232;
-    border-bottom: 1px solid #323232
-}
-
-.rightfloor .right-cart a span i {
-    display: inline-block;
-    width: 22px;
-    height: 18px;
-    margin-bottom: 7px;
-    background: url(../img/base.png) no-repeat -184px -56px
-}
-
-.rightfloor .right-cart a span font {
-    display: inline-block;
-    width: 21px;
-    height: 21px;
-    margin-top: 8px;
-    line-height: 21px;
-    font-size: 11px;
-    text-align: center;
-    background-color: #df2f3a;
-    border-radius: 11px
+    border-#{$t}: 1px solid #323232;
+    border-#{$b}: 1px solid #323232;
+    i {
+        display: inline-block;
+        @include w(22px);
+        @include h(18px);
+        margin-#{$b}: 7px;
+        background: url(../img/base.png) no-repeat -184px -56px
+    }
+    font {
+        display: inline-block;
+        @include w(21px);
+        @include h(21px);
+        margin-#{$t}: 8px;
+        line-height: 21px;
+        font-size: 11px;
+        text-align: center;
+        background-color: #df2f3a;
+        border-radius: 11px
+    }
 }
 
 .rightfloor .right-cart a:hover span {
-    border-color: #e32330
-}
-
-.rightfloor .right-cart a:hover span i {
-    background-position: -184px -38px
-}
-
-.rightfloor .right-cart a:hover span font {
-    background-color: #0a0a0a
+    border-color: #e32330;
+    i {
+        background-position: -184px -38px
+    }
+    font {
+        background-color: #0a0a0a
+    }
 }
 
 .rightfloor .online a span {
-    width: 18px;
-    height: 16px;
-    margin-top: 10px;
+    @include w(18px);
+    @include h(16px);
+    margin-#{$t}: 10px;
     background: url(../img/base.png) no-repeat -228px -57px
 }

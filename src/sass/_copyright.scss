@@ -1,42 +1,48 @@
+$t:top;
+$b:bottom;
+$l:left;
+$r:right;
+@mixin w($width) {
+    width: $width;
+}
+
+@mixin h($height) {
+    height: $height;
+}
+
 .copyright {
     padding: 25px 0 30px 0;
-    text-align: center
-}
-
-.wrap {
-    width: 1190px;
-    margin: 0 auto
-}
-
-.copyright ul {
-    width: 826px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.copyright li {
-    float: left;
-    width: 70px;
     text-align: center;
-    height: 12px;
-    line-height: 12px;
-    border-right: 1px solid #DDD;
-    text-align: center;
-    margin-right: -1px
-}
-
-.copyright a {
-    text-decoration: none;
-    color: #666;
-    margin: 0 3px;
-}
-
-.copyright .text {
-    padding: 24px 0 15px 0;
-    color: #999
-}
-
-.copyright .link a img {
-    width: 108px;
-    height: 40px;
+    .wrap {
+        @include w(1190px);
+        margin: 0 auto;
+        a {
+            text-decoration: none;
+            color: #666;
+            margin: 0 3px;
+        }
+        ul {
+            @include w(826px);
+            margin: 0 auto;
+            overflow: hidden;
+            li {
+                float: $l;
+                @include w(70px);
+                text-align: center;
+                @include h(12px);
+                line-height: 12px;
+                border-#{$r}: 1px solid #DDD;
+                text-align: center;
+                margin-#{$r}: -1px
+            }
+        }
+        .text {
+            padding: 24px 0 15px 0;
+            color: #999
+        }
+        .link a img {
+            @include w(108px);
+            @include h(40px);
+        }
+    }
 }
