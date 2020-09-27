@@ -1,150 +1,311 @@
-.area_dota2 {
-    width: 100%;
-    height: 727px;
-}
-
-a {
-    text-decoration: none;
-    color: #666
-}
-
-.f_left {
-    float: left;
-}
-
-.f_right {
-    float: right;
-}
-
-.area .wrap {
-    margin: 0 auto;
-    width: 1190px;
-    height: 727px;
-}
-
-.area .wrap .title_main {
-    width: 1190px;
-    height: 40px;
-    padding: 37px 0 20px 0;
-    font-size: 28px;
-    overflow: hidden;
-}
-
-.area .wrap .title_main .icon {
-    display: inline-block;
-    width: 35px;
-    height: 35px;
-    margin-right: 12px;
-    vertical-align: middle;
-}
-
-.area .wrap .title_main .icon img {
-    width: 35px;
-    height: 35px;
-}
-
-.area .wrap .title_main div {
-    margin-left: 116px;
-}
-
-.area .wrap .title_main div a {
-    float: left;
-    margin-right: 5px;
-    padding: 5px 20px 0 20px;
-    font-size: 16px;
-}
-
-.area .wrap .title_main .on,
-.area .wrap .title_main .on:hover {
-    border-bottom: 3px solid #de2f3c;
-    color: #e90303;
-}
-
-.area .wrap .title_main .on {
-    display: block;
-    padding-bottom: 5px;
-    color: #666;
-}
-
-.area .wrap .wrap .more {
-    float: right;
-}
-
-.area .wrap .title_main .more {
-    margin-top: 10px;
-    font-size: 16px;
-    color: #666;
-}
-
-.area .wrap .title_main .more span {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    background: url(../img/base.png) no-repeat -90px 0;
-    vertical-align: -5px;
-}
-
-.area .wrap .title_main .more:hover {
-    color: #e90303;
-}
-
-.area .wrap .title_main .more:hover span {
-    background: url(../img/base.png) no-repeat -111px 0;
-}
-
-.area .wrap .content_main {
-    width: 1190px;
-    height: 630px;
-}
-
-.area .wrap .content_main .ad {
-    width: 226px;
-    height: 614px;
-    margin: 0 15px 15px 0;
-    float: left;
-}
-
-a {
-    text-decoration: none;
-    color: #666;
-}
-
-.area .tempWrap {
-    overflow: hidden;
-    position: relative;
-    width: 949px
-}
-
-.area .tempWrap .content {
-    width: 949px;
-    left: 0px;
-    position: relative;
-    overflow: hidden;
-    padding: 0px;
-    margin: 0px;
-}
-
-.area .tempWrap .content .main {
-    float: left;
-    width: 949px;
-}
-
-.area .list a img {
-    width: 160px;
-    height: 160px;
-}
-
-.area .area_slide {
-    position: relative;
-    width: 467px;
-    height: 300px;
-    margin-right: 15px;
-    overflow: hidden;
-    float: left;
-    border: 1px solid #de2f3c;
-}
-
-.in {
-    transition: all .2s linear;
-}
+    .area_dota2 {
+        width: 100%;
+        height: 727px;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #666
+    }
+    
+    .f_left {
+        float: left;
+    }
+    
+    .f_right {
+        float: right;
+    }
+    
+    .area .wrap {
+        margin: 0 auto;
+        width: 1190px;
+        height: 727px;
+    }
+    
+    .area .wrap .title_main {
+        width: 1190px;
+        height: 40px;
+        padding: 37px 0 20px 0;
+        font-size: 28px;
+        overflow: hidden;
+    }
+    
+    .area .wrap .title_main .icon {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        margin-right: 12px;
+        vertical-align: middle;
+    }
+    
+    .area .wrap .title_main .icon img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .area .wrap .title_main div {
+        margin-left: 116px;
+    }
+    
+    .area .wrap .title_main div a {
+        float: left;
+        margin-right: 5px;
+        padding: 5px 20px 0 20px;
+        font-size: 16px;
+    }
+    
+    .area .wrap .title_main .on,
+    .area .wrap .title_main .on:hover {
+        border-bottom: 3px solid #de2f3c;
+        color: #e90303;
+    }
+    
+    .area .wrap .title_main .on {
+        display: block;
+        padding-bottom: 5px;
+        color: #666;
+    }
+    
+    .area .wrap .wrap .more {
+        float: right;
+    }
+    
+    .area .wrap .title_main .more {
+        margin-top: 10px;
+        font-size: 16px;
+        color: #666;
+    }
+    
+    .area .wrap .title_main .more span {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        background: url(../img/base.png) no-repeat -90px 0;
+        vertical-align: -5px;
+    }
+    
+    .area .wrap .title_main .more:hover {
+        color: #e90303;
+    }
+    
+    .area .wrap .title_main .more:hover span {
+        background: url(../img/base.png) no-repeat -111px 0;
+    }
+    
+    .area .wrap .content_main {
+        width: 1190px;
+        height: 630px;
+    }
+    
+    .area .wrap .content_main .ad {
+        width: 226px;
+        height: 614px;
+        margin: 0 15px 15px 0;
+        float: left;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #666;
+    }
+    
+    .area .tempWrap {
+        overflow: hidden;
+        position: relative;
+        width: 949px
+    }
+    
+    .area .tempWrap .content {
+        width: 949px;
+        left: 0px;
+        position: relative;
+        overflow: hidden;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .area .tempWrap .content .main {
+        float: left;
+        width: 949px;
+    }
+    
+    .area .list a img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .area .area_slide {
+        position: relative;
+        width: 467px;
+        height: 300px;
+        margin-right: 15px;
+        overflow: hidden;
+        float: left;
+        // border: 1px solid #de2f3c;
+    }
+    
+    .area .area_slide .hd {
+        bottom: 17px;
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        width: 100%;
+        z-index: 1;
+        text-align: center;
+    }
+    
+    .area .area_slide .hd img {
+        display: inline-block;
+        width: 11px;
+        height: 11px;
+        border-radius: 6px;
+        margin: 0 5px;
+        overflow: hidden;
+        text-decoration: none;
+        color: #e90404;
+    }
+    
+    .area .area_slide .bdWrap {
+        overflow: hidden;
+        position: relative;
+        width: 467px;
+        height: 304px;
+    }
+    
+    .area .area_slide .bdWrap ul {
+        width: 467px;
+        height: 304px;
+        left: 0px;
+        position: relative;
+        overflow: hidden;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    .area .area_slide .bdWrap li {
+        float: left;
+        width: 467px;
+    }
+    
+    .area .area_slide .bdWrap .bdlarrow,
+    .area .area_slide .bdWrap .bdrarrow {
+        display: block;
+        width: 35px;
+        height: 70px;
+        margin-top: -35px;
+        position: absolute;
+        top: 50%;
+        border-radius: 3px;
+    }
+    
+    .area .area_slide .bdWrap .bdlarrow {
+        left: 50%;
+    }
+    
+    .area .area_slide .bdWrap .bdrarrow {
+        right: 50%;
+    }
+    
+    .bdlarrow span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url(../img/base.png);
+        background-position: -94px -20px;
+    }
+    
+    .bdrarrow span {
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url(../img/base.png);
+        background-position: -129px -20px;
+        ;
+    }
+    
+    .area .list {
+        position: relative;
+        float: left;
+        background-color: #FFF;
+        width: 226px;
+        height: 253px;
+        padding-top: 47px;
+        margin: 0 15px 15px 0;
+        text-align: center;
+    }
+    
+    .area .list a img {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .area .list .name {
+        font-size: 14px;
+        margin: 15px 15px 5px 15px;
+        max-height: 38px;
+        overflow: hidden;
+        overflow-wrap: break-word;
+        word-break: break-all;
+    }
+    
+    .right-m {
+        width: 467px;
+        float: left;
+        div:nth-of-type(2) {
+            margin-right: 0;
+        }
+    }
+    
+    .main div:nth-of-type(4) {
+        margin-right: 0;
+    }
+    
+    .area .list .price {
+        font-size: 18px;
+        color: #eb0303;
+    }
+    
+    .area .add {
+        overflow: hidden;
+        // display: none;
+        height: 90px;
+        padding-top: 0px;
+        margin-top: 0px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 226px;
+        height: 90px;
+        display: none;
+        background: url("http://static.wanmei.com/shop/images/rgba.png");
+    }
+    
+    .area .add a.stars0 {
+        background-position: 0 -70px;
+    }
+    
+    .area .add a.star {
+        width: 74px;
+        height: 14px;
+        margin: 12px auto;
+        background: url(http://static.wanmei.com/shop/images/stars.png) no-repeat 0 0;
+        background-position-x: 0px;
+        background-position-y: 0px;
+        display: block;
+    }
+    
+    .area .add a.btn {
+        position: absolute;
+        top: 38px;
+        left: 50%;
+        width: 214px;
+        height: 45px;
+        line-height: 45px;
+        margin: 0 auto 0 -108px;
+        border: 1px solid #FFF;
+        font-size: 16px;
+        color: #FFF;
+    }

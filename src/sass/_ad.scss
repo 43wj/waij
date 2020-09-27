@@ -1,12 +1,14 @@
 .ad {
     width: 100%;
+    padding-bottom: 40px;
+    background-color: #FFF;
+    margin: -170px auto auto;
 }
 
 .ad .ad-list {
     width: 1190px;
     height: 160px;
     margin: 0 auto;
-    background-color: plum;
 }
 
 .ad .ad-list a {
@@ -17,4 +19,11 @@
 .ad .ad-list a img {
     width: 386px;
     height: 160px;
+}
+
+.ad .wrap {
+    position: relative;
+    padding-top: 146px;
+    width: 1190px;
+    margin: 0 auto;
 }

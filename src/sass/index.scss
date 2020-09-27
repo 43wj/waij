@@ -11,6 +11,7 @@
 @import "area-hot";
 @import "about";
 @import "copyright";
+@import "public";
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +20,9 @@
 
 html,
 body {
+    color: #474747;
     font-size: 12px;
+    background-color: #f5f5f5;
     font-family: "Microsoft YaHei",
 }
 
