@@ -5,11 +5,96 @@
 
 .banner .temp-wrap {
     margin: 0 auto;
-    width: 1300px;
+    width: 1920px;
     height: 439px;
+    position: relative;
+    overflow: hidden;
 }
 
 .banner .temp-wrap img {
-    width: 1300px;
+    width: 1920px;
     height: 439px;
+}
+
+.banner ul {
+    color: #474747;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.banner ul li {
+    float: left;
+    width: 1920px;
+    height: 439px;
+}
+
+.banner ol {
+    position: absolute;
+    width: 180px;
+    height: 20px;
+    left: 50%;
+    margin-left: -90px;
+    bottom: 30px;
+}
+
+.banner ol li {
+    float: left;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #eff0f2;
+    margin: 0 5px;
+    text-indent: -99999px;
+    cursor: pointer;
+}
+
+.banner ol li.active {
+    background: #e22430;
+}
+
+#bright,
+#bleft {
+    width: 47px;
+    height: 80px;
+    font-size: 100px;
+    color: #fff;
+    font-family: verdana;
+    position: absolute;
+    text-decoration: none;
+    top: 110px;
+    display: none;
+    z-index: 999;
+}
+
+//leftarrow
+#bleft span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../img/base.png);
+    background-position: 0 -20px;
+}
+
+//rightarrow
+#bright span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../img/base.png);
+    background-position: -47px -20px;
+}
+
+#bleft {
+    left: 170px;
+    top: 170px;
+}
+
+#bright {
+    right: 170px;
+    top: 170px;
+}
+
+.banner .temp-wrap a:hover {
+    background-color: rgba($color: #000, $alpha: 0.5);
 }

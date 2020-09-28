@@ -4,12 +4,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>列表页</title>
     <script src="script/require.js" data-main="script/main.js" defer async="true" id="currentpage" data-page="list_module"></script>
+    <link rel="stylesheet" href="css/list.css">
 </head>
 
-<body>
-    这里就是首页
+<body style="text-align: left;">
+    <!-- 头信息 -->
+    <div class="header">
+        <div class="wrap">
+            <span class="welcome">欢迎来到完美世界周边商城！</span>
+            <div class="header-cart">
+                <a href="cart.html" class="text"><span class="icon"></span>购物车（<span class="cartNum">0</span>）</a>
+                <!--//js <div class="cart_list"></div> -->
+            </div>
+            <dl>
+                <dt><a href="#" class="">我的订单</a></dt>
+                <dd><a href="#" class="">我的关注</a></dd>
+            </dl>
+            <dl class="userlogin">
+                <dt><a href="login.html" class="">登录</a></dt>
+                <dd><a href="registry.html" target="_blank">注册</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!-- 右侧悬浮条 -->
+    <div class="rightfloor">
+        <dl>
+            <dd class="center">
+                <a href="#"><span></span></a>
+            </dd>
+            <dd class="my_like">
+                <a href="#"><span></span></a>
+            </dd>
+            <dd class="right-cart">
+                <a href="cart.html"><span><i></i>购物车<font class="cartNum">0</font></span></a>
+            </dd>
+            <dd class="online">
+                <a href="#"><span></span></a>
+            </dd>
+        </dl>
+        <p class="go_top"><a href="#"><span></span></a></p>
+    </div>
+    <!-- 顶部导航 -->
+    <div class="top_nav">
+        <div class="wrap cf">
+            <a href="#" class="f_left logo logo_wm"><img src="http://static.wanmei.com/shop/images/logo_wm.png" width="120" height="41" alt="" title="完美商城"></a>
+            <a href="#" class="f_left logo logo_shop"><img src="http://static.wanmei.com/shop/images/logo_shop.png" width="55" height="27" alt="" title="完美商城"></a>
+            <div class="f_left all_wares">
+                <p class="text"><span></span>全部商品</p>
+                <ul>
+                    <li>
+                        <a href="list.html" class="ellipsis2" target="_blank" title="DOTA2神秘商店">DOTA2神秘商店<em></em></a>
+                        <dl>
+                            <dd><a href="#">手办扭蛋</a></dd>
+                            <dd><a href="#">创意T恤</a></dd>
+                            <dd><a href="#">焕新服饰</a></dd>
+                            <dd><a href="#">生活用品</a></dd>
+                            <dd><a href="#">毛绒合辑</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="list.html" target="_blank" class="ellipsis2">完美世界周边<em></em></a>
+                        <dl>
+                            <dd><a href="#">梦间集周边</a></dd>
+                            <dd><a href="#">诛仙3专区</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="list.html" target="_blank" class="ellipsis2">CSGO正版周边<em></em></a>
+                    </li>
+                    <li>
+                        <a href="list.html" target="_blank" class="ellipsis2">姜小虎系列周边<em></em></a>
+                    </li>
+                    <li>
+                        <a href="list.html" target="_blank" class="ellipsis2">游戏外设<em></em></a>
+                        <dl>
+                            <dd><a href="#">键盘</a></dd>
+                            <dd><a href="#">鼠标</a></dd>
+                            <dd><a href="#">耳机</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="#">神魔大陆手游<em></em></a>
+                    </li>
+                    <li>
+                        <a href="#">手作<em></em></a>
+                        <dl>
+                            <dd><a href="#">可家手作</a></dd>
+                            <dd><a href="#">予礼</a></dd>
+                            <dd><a href="#">kris</a></dd>
+                            <dd><a href="#">玩皮工作室</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav f_left">
+                <li><a href="#">首页</a></li>
+                <li><a href="#" target="_blank">完美世界周边</a></li>
+                <li><a href="http://secretshop.dota2.com.cn/" target="_blank">DOTA2专区</a></li>
+                <li><a href="/faq" target="_blank">FAQ</a></li>
+            </ul>
+
+            <div class="f_right header_search">
+                <form action="" method="get" class="formsearch">
+                    <input type="text" class="text">
+                    <input type="button" class="btn">
+                    <span class="keyword">
+                        <a href="list.html" class="tj_link" target="_blank">武林手机支架</a>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- 悬浮导航 -->
+    <div class="fixed_nav">
+        <p class="to">
+
+            <a href="#tab94" style="background-color:#7976ab" class="">梦间集周边</a>
+
+            <a href="#tab66" style="background-color:#7976ab" class="">诛仙3</a>
+
+            <a href="#tab67" style="background-color:#7976ab" class="">诛仙手游</a>
+
+            <a href="#tab70" style="background-color:#7976ab" class="">赤壁</a>
+
+            <a href="#tab68" style="background-color:#7976ab" class="curr">其他</a>
+
+        </p>
+        <p class="code"><img src="http://static.wanmei.com/shop/images/code.jpg" width="118" height="118"></p>
+        <div class="tip">
+            <p class="p1">扫码关注</p>
+            <p class="p2">完美世界商城微博</p>
+            <p class="p3">参与免费抽奖</p>
+        </div>
+    </div>
+
+
 </body>
 
 </html>

@@ -310,10 +310,11 @@
 }
 .top_nav .header_search .text {
   float: left;
-  width: 263px;
-  height: 39px;
+  width: 262px;
+  height: 30px;
   line-height: 39px;
-  padding: 0 5px;
+  padding: 5px 5px;
+  border-radius: 1%;
   border: 1px solid #CCC;
   border-right: 0;
 }
@@ -334,33 +335,12 @@
   right: 56px;
   height: 30px;
   padding-top: 9px;
+  display: block;
 }
 .top_nav .header_search .keyword a {
   display: inline-block;
   padding: 3px 5px;
   background-color: #EEE;
-}
-.top_nav .header_search .keyword_list {
-  position: absolute;
-  top: 40px;
-  left: 1px;
-  width: 270px;
-  display: none;
-  background-color: #FFF;
-  border: 1px solid #CCC;
-}
-.top_nav .header_search .keyword_list a {
-  display: block;
-  padding: 0 10px;
-  height: 30px;
-  line-height: 30px;
-}
-.top_nav .header_search .keyword_list a:hover {
-  background-color: #f5f5f5;
-}
-.top_nav .header_search .keyword_list span {
-  float: right;
-  color: #999;
 }
 
 .banner {
@@ -370,13 +350,96 @@
 
 .banner .temp-wrap {
   margin: 0 auto;
-  width: 1300px;
+  width: 1920px;
   height: 439px;
+  position: relative;
+  overflow: hidden;
 }
 
 .banner .temp-wrap img {
-  width: 1300px;
+  width: 1920px;
   height: 439px;
+}
+
+.banner ul {
+  color: #474747;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.banner ul li {
+  float: left;
+  width: 1920px;
+  height: 439px;
+}
+
+.banner ol {
+  position: absolute;
+  width: 180px;
+  height: 20px;
+  left: 50%;
+  margin-left: -90px;
+  bottom: 30px;
+}
+
+.banner ol li {
+  float: left;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #eff0f2;
+  margin: 0 5px;
+  text-indent: -99999px;
+  cursor: pointer;
+}
+
+.banner ol li.active {
+  background: #e22430;
+}
+
+#bright,
+#bleft {
+  width: 47px;
+  height: 80px;
+  font-size: 100px;
+  color: #fff;
+  font-family: verdana;
+  position: absolute;
+  text-decoration: none;
+  top: 110px;
+  display: none;
+  z-index: 999;
+}
+
+#bleft span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/base.png);
+  background-position: 0 -20px;
+}
+
+#bright span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url(../img/base.png);
+  background-position: -47px -20px;
+}
+
+#bleft {
+  left: 170px;
+  top: 170px;
+}
+
+#bright {
+  right: 170px;
+  top: 170px;
+}
+
+.banner .temp-wrap a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .ad {
@@ -404,9 +467,8 @@
 
 .ad .wrap {
   position: relative;
-  padding-top: 146px;
   width: 1190px;
-  margin: 0 auto;
+  margin: 146px auto 0;
 }
 
 .area_dota2 {
@@ -511,7 +573,7 @@ a {
 
 .area .wrap .content_main .ad {
   width: 226px;
-  height: 614px;
+  height: 574px;
   margin: 0 15px 15px 0;
   float: left;
 }
@@ -691,6 +753,10 @@ a {
   background: url("http://static.wanmei.com/shop/images/rgba.png");
 }
 
+.area .product-item:hover .add {
+  display: block;
+}
+
 .area .add a.stars0 {
   background-position: 0 -70px;
 }
@@ -716,6 +782,10 @@ a {
   border: 1px solid #FFF;
   font-size: 16px;
   color: #FFF;
+}
+
+.area .add:hover a.btn {
+  color: #df2f3a;
 }
 
 .area-wm {

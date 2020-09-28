@@ -100,7 +100,7 @@
     
     .area .wrap .content_main .ad {
         width: 226px;
-        height: 614px;
+        height: 574px;
         margin: 0 15px 15px 0;
         float: left;
     }
@@ -268,7 +268,6 @@
     
     .area .add {
         overflow: hidden;
-        // display: none;
         height: 90px;
         padding-top: 0px;
         margin-top: 0px;
@@ -281,6 +280,12 @@
         height: 90px;
         display: none;
         background: url("http://static.wanmei.com/shop/images/rgba.png");
+    }
+    
+    .area .product-item:hover {
+        .add {
+            display: block;
+        }
     }
     
     .area .add a.stars0 {
@@ -308,4 +313,8 @@
         border: 1px solid #FFF;
         font-size: 16px;
         color: #FFF;
+    }
+    
+    .area .add:hover a.btn {
+        color: #df2f3a;
     }

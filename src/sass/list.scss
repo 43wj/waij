@@ -1,3 +1,25 @@
+//public
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html,
+body {
+    color: #474747;
+    font-size: 12px;
+    background-color: #f5f5f5;
+    font-family: "Microsoft YaHei",
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #474747;
+    min-width: 1300px
+}
+
+//toubu
 $t:top;
 $b:bottom;
 $l:left;
@@ -10,6 +32,182 @@ $r:right;
     height: $height;
 }
 
+.header {
+    @include h(33px);
+    background-color: #474747;
+    color: #CCC;
+    .wrap {
+        @include w(1190px);
+        margin: 0 auto;
+        .welcome {
+            margin-#{$t}: 7px;
+            float: $l;
+        }
+        .header-cart {
+            @include w(138px);
+            position: relative;
+            float: $r;
+            z-index: 2;
+            .text {
+                @include h(33px);
+                line-height: 33px;
+                background-color: #1e1e1e;
+                text-align: center;
+                cursor: pointer;
+                display: block;
+                span {
+                    color: #db313e;
+                    font-weight: bold;
+                    font-family: Arial
+                }
+                .icon {
+                    display: inline-block;
+                    margin-#{$r}: 8px;
+                    @include w(20px);
+                    @include h(14px);
+                    overflow: hidden;
+                    background: url(../img/base.png) no-repeat -164px -20px;
+                    vertical-align: -2px
+                }
+            }
+        }
+        dl {
+            margin: 11px 35px 0 0;
+            float: $r;
+            a {
+                display: inline-block;
+                color: #CCC;
+                &:hover {
+                    color: #FFF;
+                }
+            }
+        }
+    }
+    dt,
+    dd {
+        float: $l;
+        padding: 0 7px;
+        @include h(11px);
+        line-height: 11px
+    }
+    dd {
+        border-#{$l}: 1px solid #666
+    }
+}
+
+//rightfloor
+.rightfloor {
+    position: fixed;
+    #{$t}: 0;
+    #{$r}: 0;
+    @include h(100%);
+    @include w(35px);
+    background-color: #0a0a0a;
+    text-align: center;
+    z-index: 2;
+    a {
+        text-decoration: none;
+        display: block;
+        color: #FFF;
+        transition: all .2s linear;
+        &:hover {
+            background-color: #e32330
+        }
+        span {
+            display: inline-block
+        }
+    }
+    dl {
+        position: absolute;
+        #{$t}: 50%;
+        #{$l}: 0;
+        @include w(100%);
+        margin-#{$t}: -140px;
+        dd {
+            position: relative;
+            padding-#{$b}: 6px
+        }
+    }
+    .go_top {
+        position: absolute;
+        #{$b}: 50px;
+        #{$l}: 0;
+        @include w(35px);
+        @include h(35px);
+        a span {
+            @include w(24px);
+            @include h(22px);
+            margin-#{$t}: 6px;
+            background: url(../img/base.png) no-repeat -228px -20px
+        }
+    }
+    .center a,
+    .my_like a,
+    .online a,
+    .go_top a {
+        @include h(35px);
+    }
+}
+
+.rightfloor .center a span {
+    @include w(18px);
+    @include h(18px);
+    margin-#{$t}: 8px;
+    background: url(../img/base.png) no-repeat -228px -74px
+}
+
+.rightfloor .my_like a span {
+    @include w(19px);
+    @include h(15px);
+    margin-#{$t}: 11px;
+    background: url(../img/base.png) no-repeat -228px -42px
+}
+
+.rightfloor .right-cart a span {
+    @include w(22px);
+    margin: 0 auto;
+    padding: 13px 2px;
+    font-size: 13px;
+    border-#{$t}: 1px solid #323232;
+    border-#{$b}: 1px solid #323232;
+    i {
+        display: inline-block;
+        @include w(22px);
+        @include h(18px);
+        margin-#{$b}: 7px;
+        background: url(../img/base.png) no-repeat -184px -56px
+    }
+    font {
+        display: inline-block;
+        @include w(21px);
+        @include h(21px);
+        margin-#{$t}: 8px;
+        line-height: 21px;
+        font-size: 11px;
+        text-align: center;
+        background-color: #df2f3a;
+        border-radius: 11px
+    }
+}
+
+.rightfloor .right-cart a:hover span {
+    border-color: #e32330;
+    i {
+        background-position: -184px -38px
+    }
+    font {
+        background-color: #0a0a0a
+    }
+}
+
+.rightfloor .online a span {
+    @include w(18px);
+    @include h(16px);
+    margin-#{$t}: 10px;
+    background: url(../img/base.png) no-repeat -228px -57px
+}
+
+//nav
 .top_nav {
     @include h(101px);
     background-color: #FFF;
@@ -180,3 +378,5 @@ $r:right;
         }
     }
 }
+
+//悬浮导航
