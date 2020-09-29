@@ -4,7 +4,7 @@ define([], function() {
             const $list = $('.tempWrap .main');
             const $list2 = $('.tempWrap .right-m');
             $.ajax({
-                    url: 'http://192.168.13.59/xiangmu/projectname/php/wenmei.php',
+                    url: 'http://localhost/xiangmu/projectname/php/wenmei.php',
                     dataType: 'json' //设置json格式的对象。
                 })
                 .done((data) => {
@@ -36,7 +36,7 @@ define([], function() {
                     });
                 });
             $.ajax({
-                    url: 'http://192.168.13.59/xiangmu/projectname/php/wenmei.php',
+                    url: 'http://localhost/xiangmu/projectname/php/wenmei.php',
                     dataType: 'json' //设置json格式的对象。
                 })
                 .done((data) => {

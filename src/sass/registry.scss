@@ -1,0 +1,154 @@
+@charset "UTF-8";
+form {
+  width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+}
+form span {
+  font-size: 12px;
+  position: absolute;
+  left: 0;
+  bottom: -16px;
+}
+form p {
+  position: relative;
+  width: 400px;
+  height: 40px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  width: 120px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #555;
+  position: absolute;
+  left: 10px;
+}
+
+input {
+  width: 250px;
+  height: 38px;
+  outline: none;
+  border: none;
+  vertical-align: middle;
+  position: absolute;
+  right: 10px;
+}
+
+.button {
+  width: 350px;
+  height: 50px;
+  background-color: red;
+  color: white;
+  outline: none;
+  border: none;
+}
+
+.search {
+  background-color: #FFF;
+  padding-top: 24px;
+  height: 97px;
+}
+.search .search-warp {
+  width: 1190px;
+  height: 73px;
+  margin: 0 auto;
+}
+.search .search-warp .logo {
+  width: 190px;
+  height: 80px;
+  float: left;
+  margin-top: 8px;
+}
+.search .search-warp .logo h1 {
+  position: relative;
+}
+.search .search-warp .logo h1 .logo-bd {
+  color: #3C3C3C;
+  display: block;
+  margin-left: 22px;
+  padding-top: 58px;
+  width: 142px;
+  height: 0px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(../img/logo.png) no-repeat 0 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: #3C3C3C;
+  background: #fff;
+  font: 12px/1.5 tahoma, arial, "Hiragino Sans GB", "宋体", sans-serif;
+}
+
+body a {
+  color: #6C6C6C;
+}
+
+footer {
+  width: 1190px;
+  height: 180px;
+  margin: 0 auto;
+  margin-top: 250px;
+  background-color: #fff;
+}
+footer p {
+  padding-bottom: 8px;
+}
+footer span {
+  margin: 0 4px;
+  color: #9c9c9c;
+}
+footer span a:hover {
+  color: #ff5000;
+}
+footer .tb-footer {
+  padding-top: 7px;
+  border-top: 1px solid #ddd;
+}
+footer .tb-footer p {
+  margin-bottom: 8px;
+  line-height: 27px;
+  border-bottom: 1px solid #ddd;
+}
+footer b {
+  margin: 0 3px;
+  font-weight: 400;
+  color: #ddd;
+}
+footer .tb-footer a {
+  white-space: nowrap;
+  color: #6c6c6c;
+  text-decoration: none;
+}
+footer .tb-footer-bd a {
+  white-space: nowrap;
+  color: #6c6c6c;
+  text-decoration: none;
+}
+footer em {
+  color: #9c9c9c;
+  margin-left: 30px;
+  font-style: normal;
+}
+footer .tb-footer-mod {
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../img/foot.jpg) no-repeat;
+}
+
+/*# sourceMappingURL=registry.css.map */

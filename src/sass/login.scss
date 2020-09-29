@@ -1,0 +1,176 @@
+@charset "UTF-8";
+.search {
+  background-color: #FFF;
+  padding-top: 24px;
+  height: 97px;
+}
+.search .search-warp {
+  width: 1190px;
+  height: 73px;
+  margin: 0 auto;
+}
+.search .search-warp .logo {
+  width: 190px;
+  height: 80px;
+  float: left;
+  margin-top: 8px;
+}
+.search .search-warp .logo h1 {
+  position: relative;
+}
+.search .search-warp .logo h1 .logo-bd {
+  color: #3C3C3C;
+  display: block;
+  margin-left: 22px;
+  padding-top: 58px;
+  width: 142px;
+  height: 0px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(../img/logo.png) no-repeat 0 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  color: #3C3C3C;
+  background: #fff;
+  font: 12px/1.5 tahoma, arial, "Hiragino Sans GB", "宋体", sans-serif;
+}
+
+body a {
+  color: #6C6C6C;
+}
+
+footer {
+  width: 1190px;
+  height: 180px;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: #fff;
+}
+footer p {
+  padding-bottom: 8px;
+}
+footer span {
+  margin: 0 4px;
+  color: #9c9c9c;
+}
+footer span a:hover {
+  color: #ff5000;
+}
+footer .tb-footer {
+  padding-top: 7px;
+  border-top: 1px solid #ddd;
+}
+footer .tb-footer p {
+  margin-bottom: 8px;
+  line-height: 27px;
+  border-bottom: 1px solid #ddd;
+}
+footer b {
+  margin: 0 3px;
+  font-weight: 400;
+  color: #ddd;
+}
+footer .tb-footer a {
+  white-space: nowrap;
+  color: #6c6c6c;
+  text-decoration: none;
+}
+footer .tb-footer-bd a {
+  white-space: nowrap;
+  color: #6c6c6c;
+  text-decoration: none;
+}
+footer em {
+  color: #9c9c9c;
+  margin-left: 30px;
+  font-style: normal;
+}
+footer .tb-footer-mod {
+  display: inline-block;
+  vertical-align: middle;
+  background: url(../img/foot.jpg) no-repeat;
+}
+
+#wrap {
+  height: 550px;
+  background-image: url(4.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+}
+
+#wrap .logGet {
+  height: 408px;
+  width: 368px;
+  position: absolute;
+  background-color: #FFFFFF;
+  top: 20%;
+  right: 15%;
+}
+
+.logC a input {
+  width: 100%;
+  height: 45px;
+  background-color: #ee7700;
+  border: none;
+  color: white;
+  font-size: 18px;
+}
+
+.logGet .logD.logDtip .p1 {
+  display: inline-block;
+  font-size: 28px;
+  margin-top: 30px;
+  width: 86%;
+}
+
+#wrap .logGet .logD.logDtip {
+  width: 86%;
+  border-bottom: 1px solid #ee7700;
+  margin-bottom: 60px;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logGet .lgD img {
+  position: absolute;
+  top: 12px;
+  left: 8px;
+}
+
+.logGet .lgD input {
+  width: 100%;
+  height: 42px;
+  text-indent: 2.5rem;
+}
+
+#wrap .logGet .lgD {
+  width: 86%;
+  position: relative;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#wrap .logGet .logC {
+  width: 86%;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-bottom: 0px;
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=login.css.map */

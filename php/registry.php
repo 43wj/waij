@@ -1,24 +1,20 @@
 <?php
 include "conn.php";
-
-
-//检测用户名是否重名
-if (isset($_POST['username'])) {
-    $user = $_POST['username'];
-    $result = $conn->query("select * from registry1903 where username='$user'");
-    if ($result->fetch_assoc()) { //存在
-        echo true; //1
-    } else {
-        echo false; //空
+if(isset($_POST['name']) || isset($_POST['submit'])){
+    $user = $_POST['name'];
+    $result=$conn->query("select * from registry where username='$user'");
+    if($result->fetch_assoc()){
+        echo true;
+    }else{
+        echo false;
     }
+}else{
+    exit('非法操作');
 }
-
-//接收前端表单提交的数据
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $password = sha1($_POST['password']);
-    $repass = sha1($_POST['repass']);
+if(isset($_POST['submit'])){
+    $user = $_POST['username'];
+    $pass = sha1($_POST['password']);
     $email = $_POST['email'];
-    $conn->query("insert registry1903 values(null,'$username','$password','$repass','$email',NOW())");
-    header('location:http://192.168.13.66/projectname/src/login.html');
+    $conn->query("insert registry values(default,'$user','$pass','$email',NOW())");
+    header('location:http://localhost/p/xiangmu/src/login.html');
 }

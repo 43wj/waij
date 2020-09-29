@@ -1,39 +1,649 @@
-/*
-Error: Invalid GBK character "\xE6"
-        on line 382 of sass/./list.scss
+* {
+  padding: 0;
+  margin: 0;
+}
 
-377:             }
-378:         }
-379:     }
-380: }
-381: 
-382: //悬浮导航
+a {
+  text-decoration: none;
+}
 
-Backtrace:
-sass/./list.scss:382
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1300:in `rescue in block in find_encoding_error'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1297:in `block in find_encoding_error'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `each'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `each_with_index'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:1296:in `find_encoding_error'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:911:in `rescue in check_sass_encoding'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/util.rb:907:in `check_sass_encoding'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:436:in `check_encoding!'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:392:in `_to_tree'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/engine.rb:298:in `render_with_sourcemap'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:331:in `block in watch'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-C:/Ruby23-x64/lib/ruby/gems/2.3.0/gems/sass-3.4.22/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid GBK character \"\xE6\"\A         on line 382 of sass/./list.scss\A \A 377:             }\A 378:         }\A 379:     }\A 380: }\A 381: \A 382: //悬浮导航"; }
+.pagelist {
+  clear: both;
+  width: 1170px;
+  margin: 0 auto;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.m-style {
+  float: right;
+  text-align: center;
+}
+
+.m-style:before,
+.m-style:after {
+  content: "";
+  display: table;
+}
+
+.m-style:after {
+  clear: both;
+  overflow: hidden;
+}
+
+.m-style span {
+  float: left;
+  margin: 0 5px;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+.m-style .active {
+  float: left;
+  margin: 0 5px;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  background: #e91e63;
+  color: #fff;
+  font-size: 14px;
+  border: 1px solid #e91e63;
+}
+
+.m-style a {
+  float: left;
+  margin: 0 5px;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+.m-style a:hover {
+  color: #fff;
+  background: #e91e63;
+}
+
+.m-style .next,
+.m-style .prev {
+  font-family: "Simsun";
+  font-size: 16px;
+  font-weight: bold;
+  width: 80px;
+}
+
+.now,
+.count {
+  padding: 0 5px;
+  color: #f00;
+}
+
+.eg img {
+  max-width: 800px;
+  min-height: 500px;
+}
+
+input {
+  float: left;
+  margin: 0 5px;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  outline: none;
+  color: #bdbdbd;
+  font-size: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html,
+body {
+  color: #474747;
+  font-size: 12px;
+  background-color: #f5f5f5;
+  font-family: "Microsoft YaHei";
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #474747;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  height: 33px;
+  background-color: #474747;
+  color: #CCC;
+}
+.header .wrap {
+  width: 1190px;
+  margin: 0 auto;
+}
+.header .wrap .welcome {
+  margin-top: 7px;
+  float: left;
+}
+.header .wrap .header-cart {
+  width: 138px;
+  position: relative;
+  float: right;
+  z-index: 2;
+}
+.header .wrap .header-cart .text {
+  height: 33px;
+  line-height: 33px;
+  background-color: #1e1e1e;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+.header .wrap .header-cart .text span {
+  color: #db313e;
+  font-weight: bold;
+  font-family: Arial;
+}
+.header .wrap .header-cart .text .icon {
+  display: inline-block;
+  margin-right: 8px;
+  width: 20px;
+  height: 14px;
+  overflow: hidden;
+  background: url(../img/base.png) no-repeat -164px -20px;
+  vertical-align: -2px;
+}
+.header .wrap dl {
+  margin: 11px 35px 0 0;
+  float: right;
+}
+.header .wrap dl a {
+  display: inline-block;
+  color: #CCC;
+}
+.header .wrap dl a:hover {
+  color: #FFF;
+}
+.header dt,
+.header dd {
+  float: left;
+  padding: 0 7px;
+  height: 11px;
+  line-height: 11px;
+}
+.header dd {
+  border-left: 1px solid #666;
+}
+
+.rightfloor {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 35px;
+  background-color: #0a0a0a;
+  text-align: center;
+  z-index: 2;
+}
+.rightfloor a {
+  text-decoration: none;
+  display: block;
+  color: #FFF;
+  transition: all .2s linear;
+}
+.rightfloor a:hover {
+  background-color: #e32330;
+}
+.rightfloor a span {
+  display: inline-block;
+}
+.rightfloor dl {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin-top: -140px;
+}
+.rightfloor dl dd {
+  position: relative;
+  padding-bottom: 6px;
+}
+.rightfloor .go_top {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 35px;
+  height: 35px;
+}
+.rightfloor .go_top a span {
+  width: 24px;
+  height: 22px;
+  margin-top: 6px;
+  background: url(../img/base.png) no-repeat -228px -20px;
+}
+.rightfloor .center a,
+.rightfloor .my_like a,
+.rightfloor .online a,
+.rightfloor .go_top a {
+  height: 35px;
+}
+
+.rightfloor .center a span {
+  width: 18px;
+  height: 18px;
+  margin-top: 8px;
+  background: url(../img/base.png) no-repeat -228px -74px;
+}
+
+.rightfloor .my_like a span {
+  width: 19px;
+  height: 15px;
+  margin-top: 11px;
+  background: url(../img/base.png) no-repeat -228px -42px;
+}
+
+.rightfloor .right-cart a span {
+  width: 22px;
+  margin: 0 auto;
+  padding: 13px 2px;
+  font-size: 13px;
+  border-top: 1px solid #323232;
+  border-bottom: 1px solid #323232;
+}
+.rightfloor .right-cart a span i {
+  display: inline-block;
+  width: 22px;
+  height: 18px;
+  margin-bottom: 7px;
+  background: url(../img/base.png) no-repeat -184px -56px;
+}
+.rightfloor .right-cart a span font {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  margin-top: 8px;
+  line-height: 21px;
+  font-size: 11px;
+  text-align: center;
+  background-color: #df2f3a;
+  border-radius: 11px;
+}
+
+.rightfloor .right-cart a:hover span {
+  border-color: #e32330;
+}
+.rightfloor .right-cart a:hover span i {
+  background-position: -184px -38px;
+}
+.rightfloor .right-cart a:hover span font {
+  background-color: #0a0a0a;
+}
+
+.rightfloor .online a span {
+  width: 18px;
+  height: 16px;
+  margin-top: 10px;
+  background: url(../img/base.png) no-repeat -228px -57px;
+}
+
+.top_nav {
+  width: 100%;
+  height: 101px;
+  background-color: #FFF;
+  border-b: 3px solid #de2f3c;
+  box-shadow: 0 3px 3px #CCC;
+}
+.top_nav .wrap {
+  width: 1190px;
+  margin: 0 auto;
+}
+.top_nav a {
+  text-decoration: none;
+  color: #666;
+}
+.top_nav a:hover {
+  text-decoration: none;
+  color: #e90404;
+}
+.top_nav a.on {
+  text-decoration: none;
+  color: #e90404;
+}
+.top_nav .f_left {
+  float: left;
+}
+.top_nav .f_right {
+  float: right;
+}
+.top_nav .logo {
+  display: block;
+}
+.top_nav .logo_wm {
+  width: 183px;
+  text-align: center;
+  height: 72px;
+  padding-top: 29px;
+  background-color: #c20315;
+  margin-b: -3px;
+}
+.top_nav .logo_shop {
+  margin: 37px 0 0 34px;
+}
+.top_nav .all_wares {
+  position: relative;
+  width: 175px;
+  margin-left: 50px;
+  text-indent: 19px;
+  z-index: 1;
+}
+.top_nav .all_wares .text {
+  height: 101px;
+  line-height: 101px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.top_nav .all_wares .text span {
+  display: inline-block;
+  width: 15px;
+  height: 13px;
+  margin-right: 7px;
+  background: url(../img/base.png) no-repeat -24px 0;
+  vertical-align: -1px;
+}
+.top_nav .all_wares ul {
+  position: absolute;
+  top: 101px;
+  left: 0;
+  padding-bottom: 10px;
+  display: none;
+  width: 100%;
+  font-size: 14px;
+  background-color: #FFF;
+  box-shadow: 0 2px 3px #CCC;
+}
+.top_nav .all_wares li {
+  position: relative;
+}
+.top_nav .all_wares li a {
+  display: block;
+  width: 155px;
+  padding-right: 20px;
+  height: 40px;
+  line-height: 40px;
+  background-color: #FFF;
+  color: #474747;
+  position: relative;
+}
+.top_nav .all_wares li a em {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 6px;
+  height: 10px;
+  overflow: hidden;
+  background: url(../img/base.png) no-repeat -54px 0;
+}
+.top_nav .all_wares li a:hover {
+  background-color: #f5f5f5;
+  color: #e90404;
+}
+.top_nav .all_wares li a:hover em {
+  background-position: -60px 0;
+}
+.top_nav .all_wares li:hover dl {
+  display: block;
+}
+.top_nav .all_wares:hover ul {
+  display: block;
+}
+.top_nav .all_wares dl {
+  position: absolute;
+  top: 0;
+  left: 175px;
+  display: none;
+}
+.top_nav .nav {
+  margin-top: 40px;
+}
+.top_nav .nav li {
+  float: left;
+  padding: 0 15px;
+  font-size: 15px;
+}
+.top_nav .nav li a {
+  color: #474747;
+}
+.top_nav .nav li a:hover {
+  color: #e90404;
+}
+.top_nav .header_search {
+  position: relative;
+  width: 320px;
+  height: 41px;
+  margin-top: 30px;
+  z-index: 1;
+}
+.top_nav .header_search .text {
+  float: left;
+  width: 262px;
+  height: 30px;
+  line-height: 39px;
+  padding: 5px 5px;
+  border-radius: 1%;
+  border: 1px solid #CCC;
+  border-right: 0;
+  margin: 0;
+}
+.top_nav .header_search .btn {
+  float: right;
+  width: 46px;
+  height: 41px;
+  border: 0;
+  background: #e32332 url(http://static.wanmei.com/shop/images/search.png) no-repeat center;
+  cursor: pointer;
+  margin: 0;
+}
+.top_nav .header_search .btn:hover {
+  background-color: #C00;
+}
+.top_nav .header_search .keyword {
+  position: absolute;
+  top: 1px;
+  right: 56px;
+  height: 30px;
+  padding-top: 9px;
+  display: block;
+}
+.top_nav .header_search .keyword a {
+  display: inline-block;
+  padding: 3px 5px;
+  background-color: #EEE;
+}
+
+.copyright {
+  position: fixed;
+  padding: 25px 0 30px 0;
+  text-align: center;
+}
+.copyright .wrap {
+  width: 1190px;
+  margin: 0 auto;
+}
+.copyright .wrap a {
+  text-decoration: none;
+  color: #666;
+  margin: 0 3px;
+}
+.copyright .wrap ul {
+  width: 826px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.copyright .wrap ul li {
+  float: left;
+  width: 70px;
+  text-align: center;
+  height: 12px;
+  line-height: 12px;
+  border-right: 1px solid #DDD;
+  text-align: center;
+  margin-right: -1px;
+}
+.copyright .wrap .text {
+  padding: 24px 0 15px 0;
+  color: #999;
+}
+
+header {
+  width: 100%;
+  height: 60px;
+  background-color: #fff;
+}
+header .hearwrap {
+  width: 1220px;
+  height: 60px;
+  margin: 0 auto;
+  position: relative;
+}
+header .hearwrap .btn-wrap {
+  width: 100px;
+  height: 60px;
+  position: absolute;
+  z-index: 999;
+  overflow: hidden;
+}
+header .hearwrap button {
+  width: 100px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border: 1px solid transparent;
+}
+header .hearwrap .btn-wrap:hover {
+  overflow: visible;
+}
+header .hearwrap button:hover {
+  background-color: #f5f5f5;
+  border: 1px solid #fff;
+}
+
+.list ul {
+  width: 1006px;
+  height: 524px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+
+.list li {
+  width: 183px;
+  height: 243.3px;
+  float: left;
+  position: relative;
+  margin: 9px;
+  background-color: #FFF;
+}
+
+.list .pic {
+  width: 183px;
+  height: 183px;
+  line-height: 183px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.list .pic a {
+  text-decoration: none;
+}
+
+.list .pic img {
+  max-width: 183px;
+  max-height: 183px;
+  vertical-align: middle;
+}
+
+.list .info {
+  height: 75px;
+  padding-top: 15px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 18px;
+  background-color: #EEE;
+}
+
+.list .name {
+  color: #474747;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.list .price {
+  color: #e90404;
+}
+
+.list .add {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  display: none;
+  background: url("http://static.wanmei.com/shop/images/rgba.png");
+}
+
+.list .add .star {
+  display: block;
+  width: 74px;
+  height: 14px;
+  margin: 12px auto;
+  background: url(../img/stars.png) no-repeat 0 0;
+}
+
+.list .add .addCart {
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  width: 214px;
+  height: 45px;
+  line-height: 45px;
+  margin: 0 auto 0 -108px;
+  text-align: center;
+  border: 1px solid #FFF;
+  font-size: 16px;
+  color: #FFF;
+}
+
+.list .add .addCart span {
+  display: inline-block;
+  width: 22px;
+  height: 18px;
+  margin-right: 9px;
+  vertical-align: -3px;
+  background: url("http://static.wanmei.com/shop/images/shop_car.png") no-repeat 0 0;
+}
+
+footer {
+  width: 100%;
+  height: 100px;
+  background-color: #f5f5f5;
+}
+
+/*# sourceMappingURL=list.css.map */

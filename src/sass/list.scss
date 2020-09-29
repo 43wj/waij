@@ -1,382 +1,564 @@
-//public
-* {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-html,
-body {
-    color: #474747;
-    font-size: 12px;
-    background-color: #f5f5f5;
-    font-family: "Microsoft YaHei",
-}
-
-body {
-    background-color: #f5f5f5;
-    color: #474747;
-    min-width: 1300px
-}
-
-//toubu
-$t:top;
-$b:bottom;
-$l:left;
-$r:right;
-@mixin w($width) {
-    width: $width;
-}
-
-@mixin h($height) {
-    height: $height;
-}
-
-.header {
-    @include h(33px);
-    background-color: #474747;
-    color: #CCC;
-    .wrap {
-        @include w(1190px);
-        margin: 0 auto;
-        .welcome {
-            margin-#{$t}: 7px;
-            float: $l;
-        }
-        .header-cart {
-            @include w(138px);
-            position: relative;
-            float: $r;
-            z-index: 2;
-            .text {
-                @include h(33px);
-                line-height: 33px;
-                background-color: #1e1e1e;
-                text-align: center;
-                cursor: pointer;
-                display: block;
-                span {
-                    color: #db313e;
-                    font-weight: bold;
-                    font-family: Arial
+    //public
+    @import "pagination";
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    html,
+    body {
+        color: #474747;
+        font-size: 12px;
+        background-color: #f5f5f5;
+        font-family: "Microsoft YaHei",
+    }
+    
+    body {
+        background-color: #f5f5f5;
+        color: #474747;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    //toubu
+    $t:top;
+    $b:bottom;
+    $l:left;
+    $r:right;
+    @mixin w($width) {
+        width: $width;
+    }
+    
+    @mixin h($height) {
+        height: $height;
+    }
+    
+    .header {
+        @include h(33px);
+        background-color: #474747;
+        color: #CCC;
+        .wrap {
+            @include w(1190px);
+            margin: 0 auto;
+            .welcome {
+                margin-#{$t}: 7px;
+                float: $l;
+            }
+            .header-cart {
+                @include w(138px);
+                position: relative;
+                float: $r;
+                z-index: 2;
+                .text {
+                    @include h(33px);
+                    line-height: 33px;
+                    background-color: #1e1e1e;
+                    text-align: center;
+                    cursor: pointer;
+                    display: block;
+                    span {
+                        color: #db313e;
+                        font-weight: bold;
+                        font-family: Arial
+                    }
+                    .icon {
+                        display: inline-block;
+                        margin-#{$r}: 8px;
+                        @include w(20px);
+                        @include h(14px);
+                        overflow: hidden;
+                        background: url(../img/base.png) no-repeat -164px -20px;
+                        vertical-align: -2px
+                    }
                 }
-                .icon {
+            }
+            dl {
+                margin: 11px 35px 0 0;
+                float: $r;
+                a {
                     display: inline-block;
-                    margin-#{$r}: 8px;
-                    @include w(20px);
-                    @include h(14px);
-                    overflow: hidden;
-                    background: url(../img/base.png) no-repeat -164px -20px;
-                    vertical-align: -2px
+                    color: #CCC;
+                    &:hover {
+                        color: #FFF;
+                    }
                 }
+            }
+        }
+        dt,
+        dd {
+            float: $l;
+            padding: 0 7px;
+            @include h(11px);
+            line-height: 11px
+        }
+        dd {
+            border-#{$l}: 1px solid #666
+        }
+    }
+    
+    //rightfloor
+    .rightfloor {
+        position: fixed;
+        #{$t}: 0;
+        #{$r}: 0;
+        @include h(100%);
+        @include w(35px);
+        background-color: #0a0a0a;
+        text-align: center;
+        z-index: 2;
+        a {
+            text-decoration: none;
+            display: block;
+            color: #FFF;
+            transition: all .2s linear;
+            &:hover {
+                background-color: #e32330
+            }
+            span {
+                display: inline-block
             }
         }
         dl {
-            margin: 11px 35px 0 0;
-            float: $r;
-            a {
-                display: inline-block;
-                color: #CCC;
-                &:hover {
-                    color: #FFF;
-                }
+            position: absolute;
+            #{$t}: 50%;
+            #{$l}: 0;
+            @include w(100%);
+            margin-#{$t}: -140px;
+            dd {
+                position: relative;
+                padding-#{$b}: 6px
             }
         }
-    }
-    dt,
-    dd {
-        float: $l;
-        padding: 0 7px;
-        @include h(11px);
-        line-height: 11px
-    }
-    dd {
-        border-#{$l}: 1px solid #666
-    }
-}
-
-//rightfloor
-.rightfloor {
-    position: fixed;
-    #{$t}: 0;
-    #{$r}: 0;
-    @include h(100%);
-    @include w(35px);
-    background-color: #0a0a0a;
-    text-align: center;
-    z-index: 2;
-    a {
-        text-decoration: none;
-        display: block;
-        color: #FFF;
-        transition: all .2s linear;
-        &:hover {
-            background-color: #e32330
+        .go_top {
+            position: absolute;
+            #{$b}: 50px;
+            #{$l}: 0;
+            @include w(35px);
+            @include h(35px);
+            a span {
+                @include w(24px);
+                @include h(22px);
+                margin-#{$t}: 6px;
+                background: url(../img/base.png) no-repeat -228px -20px
+            }
         }
-        span {
-            display: inline-block
+        .center a,
+        .my_like a,
+        .online a,
+        .go_top a {
+            @include h(35px);
         }
     }
-    dl {
-        position: absolute;
-        #{$t}: 50%;
-        #{$l}: 0;
-        @include w(100%);
-        margin-#{$t}: -140px;
-        dd {
-            position: relative;
-            padding-#{$b}: 6px
-        }
-    }
-    .go_top {
-        position: absolute;
-        #{$b}: 50px;
-        #{$l}: 0;
-        @include w(35px);
-        @include h(35px);
-        a span {
-            @include w(24px);
-            @include h(22px);
-            margin-#{$t}: 6px;
-            background: url(../img/base.png) no-repeat -228px -20px
-        }
-    }
-    .center a,
-    .my_like a,
-    .online a,
-    .go_top a {
-        @include h(35px);
-    }
-}
-
-.rightfloor .center a span {
-    @include w(18px);
-    @include h(18px);
-    margin-#{$t}: 8px;
-    background: url(../img/base.png) no-repeat -228px -74px
-}
-
-.rightfloor .my_like a span {
-    @include w(19px);
-    @include h(15px);
-    margin-#{$t}: 11px;
-    background: url(../img/base.png) no-repeat -228px -42px
-}
-
-.rightfloor .right-cart a span {
-    @include w(22px);
-    margin: 0 auto;
-    padding: 13px 2px;
-    font-size: 13px;
-    border-#{$t}: 1px solid #323232;
-    border-#{$b}: 1px solid #323232;
-    i {
-        display: inline-block;
-        @include w(22px);
+    
+    .rightfloor .center a span {
+        @include w(18px);
         @include h(18px);
-        margin-#{$b}: 7px;
-        background: url(../img/base.png) no-repeat -184px -56px
-    }
-    font {
-        display: inline-block;
-        @include w(21px);
-        @include h(21px);
         margin-#{$t}: 8px;
-        line-height: 21px;
-        font-size: 11px;
-        text-align: center;
-        background-color: #df2f3a;
-        border-radius: 11px
+        background: url(../img/base.png) no-repeat -228px -74px
     }
-}
-
-.rightfloor .right-cart a:hover span {
-    border-color: #e32330;
-    i {
-        background-position: -184px -38px
+    
+    .rightfloor .my_like a span {
+        @include w(19px);
+        @include h(15px);
+        margin-#{$t}: 11px;
+        background: url(../img/base.png) no-repeat -228px -42px
     }
-    font {
-        background-color: #0a0a0a
-    }
-}
-
-.rightfloor .online a span {
-    @include w(18px);
-    @include h(16px);
-    margin-#{$t}: 10px;
-    background: url(../img/base.png) no-repeat -228px -57px
-}
-
-//nav
-.top_nav {
-    @include h(101px);
-    background-color: #FFF;
-    border-#{b}: 3px solid #de2f3c;
-    box-shadow: 0 3px 3px #CCC;
-    .wrap {
-        @include w(1190px);
+    
+    .rightfloor .right-cart a span {
+        @include w(22px);
         margin: 0 auto;
+        padding: 13px 2px;
+        font-size: 13px;
+        border-#{$t}: 1px solid #323232;
+        border-#{$b}: 1px solid #323232;
+        i {
+            display: inline-block;
+            @include w(22px);
+            @include h(18px);
+            margin-#{$b}: 7px;
+            background: url(../img/base.png) no-repeat -184px -56px
+        }
+        font {
+            display: inline-block;
+            @include w(21px);
+            @include h(21px);
+            margin-#{$t}: 8px;
+            line-height: 21px;
+            font-size: 11px;
+            text-align: center;
+            background-color: #df2f3a;
+            border-radius: 11px
+        }
     }
-    a {
-        text-decoration: none;
-        color: #666;
-        &:hover {
+    
+    .rightfloor .right-cart a:hover span {
+        border-color: #e32330;
+        i {
+            background-position: -184px -38px
+        }
+        font {
+            background-color: #0a0a0a
+        }
+    }
+    
+    .rightfloor .online a span {
+        @include w(18px);
+        @include h(16px);
+        margin-#{$t}: 10px;
+        background: url(../img/base.png) no-repeat -228px -57px
+    }
+    
+    //nav
+    .top_nav {
+        width: 100%;
+        @include h(101px);
+        background-color: #FFF;
+        border-#{b}: 3px solid #de2f3c;
+        box-shadow: 0 3px 3px #CCC;
+        .wrap {
+            @include w(1190px);
+            margin: 0 auto;
+        }
+        a {
+            text-decoration: none;
+            color: #666;
+            &:hover {
+                text-decoration: none;
+                color: #e90404
+            }
+        }
+        a.on {
             text-decoration: none;
             color: #e90404
         }
-    }
-    a.on {
-        text-decoration: none;
-        color: #e90404
-    }
-    .f_left {
-        float: $l;
-    }
-    .f_right {
-        float: $r;
-    }
-    .logo {
-        display: block
-    }
-    .logo_wm {
-        @include w(183px);
-        text-align: center;
-        @include h(72px);
-        padding-#{$t}: 29px;
-        background-color: #c20315;
-        margin-#{b}: -3px
-    }
-    .logo_shop {
-        margin: 37px 0 0 34px
-    }
-    .all_wares {
-        position: relative;
-        @include w(175px);
-        margin-#{$l}: 50px;
-        text-indent: 19px;
-        z-index: 1;
-        .text {
-            @include h(101px);
-            line-height: 101px;
-            font-size: 15px;
-            cursor: pointer;
-            span {
-                display: inline-block;
-                @include w(15px);
-                @include h(13px);
-                margin-#{$r}: 7px;
-                background: url(../img/base.png) no-repeat -24px 0;
-                vertical-align: -1px
-            }
-        }
-        ul {
-            position: absolute;
-            #{$t}: 101px;
-            #{$l}: 0;
-            padding-#{$b}: 10px;
-            display: none;
-            @include w(100%);
-            font-size: 14px;
-            background-color: #FFF;
-            box-shadow: 0 2px 3px #CCC
-        }
-        li {
-            position: relative;
-            a {
-                display: block;
-                @include w(155px);
-                padding-#{$r}: 20px;
-                @include h(40px);
-                line-height: 40px;
-                background-color: #FFF;
-                color: #474747;
-                position: relative;
-                em {
-                    position: absolute;
-                    #{$t}: 15px;
-                    #{$r}: 10px;
-                    @include w(6px);
-                    @include h(10px);
-                    overflow: hidden;
-                    background: url(../img/base.png) no-repeat -54px 0
-                }
-                &:hover {
-                    background-color: #f5f5f5;
-                    color: #e90404
-                }
-                &:hover em {
-                    background-position: -60px 0
-                }
-            }
-            &:hover dl {
-                display: block;
-            }
-        }
-        &:hover ul {
-            display: block;
-        }
-        dl {
-            position: absolute;
-            #{$t}: 0;
-            #{$l}: 175px;
-            display: none
-        }
-    }
-    .nav {
-        margin-#{$t}: 40px;
-        li {
+        .f_left {
             float: $l;
-            padding: 0 15px;
-            font-size: 15px;
-            a {
-                color: #474747;
-                &:hover {
-                    color: #e90404
-                }
-            }
         }
-    }
-    .header_search {
-        position: relative;
-        @include w(320px);
-        @include h(41px);
-        margin-#{$t}: 30px;
-        z-index: 1;
-        .text {
-            float: $l;
-            @include w(262px);
-            @include h(30px);
-            line-height: 39px;
-            padding: 5px 5px;
-            border-radius: 1%;
-            border: 1px solid #CCC;
-            border-#{$r}: 0;
-        }
-        .btn {
+        .f_right {
             float: $r;
-            @include w(46px);
-            @include h(41px);
-            border: 0;
-            background: #e32332 url(http://static.wanmei.com/shop/images/search.png) no-repeat center;
-            cursor: pointer;
-            &:hover {
-                background-color: #C00
+        }
+        .logo {
+            display: block
+        }
+        .logo_wm {
+            @include w(183px);
+            text-align: center;
+            @include h(72px);
+            padding-#{$t}: 29px;
+            background-color: #c20315;
+            margin-#{b}: -3px
+        }
+        .logo_shop {
+            margin: 37px 0 0 34px
+        }
+        .all_wares {
+            position: relative;
+            @include w(175px);
+            margin-#{$l}: 50px;
+            text-indent: 19px;
+            z-index: 1;
+            .text {
+                @include h(101px);
+                line-height: 101px;
+                font-size: 15px;
+                cursor: pointer;
+                span {
+                    display: inline-block;
+                    @include w(15px);
+                    @include h(13px);
+                    margin-#{$r}: 7px;
+                    background: url(../img/base.png) no-repeat -24px 0;
+                    vertical-align: -1px
+                }
+            }
+            ul {
+                position: absolute;
+                #{$t}: 101px;
+                #{$l}: 0;
+                padding-#{$b}: 10px;
+                display: none;
+                @include w(100%);
+                font-size: 14px;
+                background-color: #FFF;
+                box-shadow: 0 2px 3px #CCC
+            }
+            li {
+                position: relative;
+                a {
+                    display: block;
+                    @include w(155px);
+                    padding-#{$r}: 20px;
+                    @include h(40px);
+                    line-height: 40px;
+                    background-color: #FFF;
+                    color: #474747;
+                    position: relative;
+                    em {
+                        position: absolute;
+                        #{$t}: 15px;
+                        #{$r}: 10px;
+                        @include w(6px);
+                        @include h(10px);
+                        overflow: hidden;
+                        background: url(../img/base.png) no-repeat -54px 0
+                    }
+                    &:hover {
+                        background-color: #f5f5f5;
+                        color: #e90404
+                    }
+                    &:hover em {
+                        background-position: -60px 0
+                    }
+                }
+                &:hover dl {
+                    display: block;
+                }
+            }
+            &:hover ul {
+                display: block;
+            }
+            dl {
+                position: absolute;
+                #{$t}: 0;
+                #{$l}: 175px;
+                display: none
             }
         }
-        .keyword {
-            position: absolute;
-            #{$t}: 1px;
-            #{$r}: 56px;
-            height: 30px;
-            padding-#{$t}: 9px;
-            display: block;
-            a {
-                display: inline-block;
-                padding: 3px 5px;
-                background-color: #EEE
+        .nav {
+            margin-#{$t}: 40px;
+            li {
+                float: $l;
+                padding: 0 15px;
+                font-size: 15px;
+                a {
+                    color: #474747;
+                    &:hover {
+                        color: #e90404
+                    }
+                }
+            }
+        }
+        .header_search {
+            position: relative;
+            @include w(320px);
+            @include h(41px);
+            margin-#{$t}: 30px;
+            z-index: 1;
+            .text {
+                float: $l;
+                @include w(262px);
+                @include h(30px);
+                line-height: 39px;
+                padding: 5px 5px;
+                border-radius: 1%;
+                border: 1px solid #CCC;
+                border-#{$r}: 0;
+                margin: 0;
+            }
+            .btn {
+                float: $r;
+                @include w(46px);
+                @include h(41px);
+                border: 0;
+                background: #e32332 url(http://static.wanmei.com/shop/images/search.png) no-repeat center;
+                cursor: pointer;
+                margin: 0;
+                &:hover {
+                    background-color: #C00
+                }
+            }
+            .keyword {
+                position: absolute;
+                #{$t}: 1px;
+                #{$r}: 56px;
+                height: 30px;
+                padding-#{$t}: 9px;
+                display: block;
+                a {
+                    display: inline-block;
+                    padding: 3px 5px;
+                    background-color: #EEE
+                }
             }
         }
     }
-}
-
-//悬浮导航
+    
+    //copyright
+    .copyright {
+        position: fixed;
+        padding: 25px 0 30px 0;
+        text-align: center;
+        .wrap {
+            @include w(1190px);
+            margin: 0 auto;
+            a {
+                text-decoration: none;
+                color: #666;
+                margin: 0 3px;
+            }
+            ul {
+                @include w(826px);
+                margin: 0 auto;
+                overflow: hidden;
+                li {
+                    float: $l;
+                    @include w(70px);
+                    text-align: center;
+                    @include h(12px);
+                    line-height: 12px;
+                    border-#{$r}: 1px solid #DDD;
+                    text-align: center;
+                    margin-#{$r}: -1px
+                }
+            }
+            .text {
+                padding: 24px 0 15px 0;
+                color: #999
+            }
+        }
+    }
+    
+    //anniu
+    header {
+        width: 100%;
+        height: 60px;
+        background-color: #fff;
+        .hearwrap {
+            width: 1220px;
+            height: 60px;
+            margin: 0 auto;
+            position: relative;
+            .btn-wrap {
+                width: 100px;
+                height: 60px;
+                position: absolute;
+                z-index: 999;
+                overflow: hidden;
+            }
+            button {
+                width: 100px;
+                height: 60px;
+                text-align: center;
+                line-height: 60px;
+                background-color: #fff;
+                border: none;
+                outline: none;
+                border: 1px solid transparent;
+            }
+            .btn-wrap:hover {
+                overflow: visible;
+            }
+            button:hover {
+                background-color: #f5f5f5;
+                border: 1px solid #fff;
+            }
+        }
+    }
+    
+    //fenyepaixu
+    .list {
+        ul {
+            width: 1006px;
+            height: 524px;
+            margin: 0 auto;
+            margin-bottom: 40px;
+        }
+    }
+    
+    .list li {
+        width: 183px;
+        height: 243.3px;
+        float: left;
+        position: relative;
+        margin: 9px;
+        background-color: #FFF;
+    }
+    
+    .list .pic {
+        width: 183px;
+        height: 183px;
+        line-height: 183px;
+        text-align: center;
+        vertical-align: middle;
+    }
+    
+    .list .pic a {
+        text-decoration: none;
+    }
+    
+    .list .pic img {
+        max-width: 183px;
+        max-height: 183px;
+        vertical-align: middle;
+    }
+    
+    .list .info {
+        height: 75px;
+        padding-top: 15px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 18px;
+        background-color: #EEE;
+    }
+    
+    .list .name {
+        color: #474747;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .list .price {
+        color: #e90404;
+    }
+    
+    .list .add {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 90px;
+        display: none;
+        background: url("http://static.wanmei.com/shop/images/rgba.png");
+    }
+    
+    .list .add .star {
+        display: block;
+        width: 74px;
+        height: 14px;
+        margin: 12px auto;
+        background: url(../img/stars.png) no-repeat 0 0;
+    }
+    
+    .list .add .addCart {
+        position: absolute;
+        top: 38px;
+        left: 50%;
+        width: 214px;
+        height: 45px;
+        line-height: 45px;
+        margin: 0 auto 0 -108px;
+        text-align: center;
+        border: 1px solid #FFF;
+        font-size: 16px;
+        color: #FFF;
+    }
+    
+    .list .add .addCart span {
+        display: inline-block;
+        width: 22px;
+        height: 18px;
+        margin-right: 9px;
+        vertical-align: -3px;
+        background: url("http://static.wanmei.com/shop/images/shop_car.png") no-repeat 0 0;
+    }
+    
+    footer {
+        width: 100%;
+        height: 100px;
+        background-color: #f5f5f5;
+    }
