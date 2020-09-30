@@ -23,5 +23,4 @@ define(['sha1'], function() {
             });
         }
     }
-
 })

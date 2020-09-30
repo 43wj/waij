@@ -16,5 +16,5 @@ if(isset($_POST['submit'])){
     $pass = sha1($_POST['password']);
     $email = $_POST['email'];
     $conn->query("insert registry values(default,'$user','$pass','$email',NOW())");
-    header('location:http://localhost/p/xiangmu/src/login.html');
+    header('location:http://localhost/xiangmu/projectname/src/login.html');
 }

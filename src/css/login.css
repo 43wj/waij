@@ -1,39 +1,4 @@
 @charset "UTF-8";
-.search {
-  background-color: #FFF;
-  padding-top: 24px;
-  height: 97px;
-}
-
-.search .search-warp {
-  width: 1190px;
-  height: 73px;
-  margin: 0 auto;
-}
-
-.search .search-warp .logo {
-  width: 190px;
-  height: 80px;
-  float: left;
-  margin-top: 8px;
-}
-
-.search .search-warp .logo h1 {
-  position: relative;
-}
-
-.search .search-warp .logo h1 .logo-bd {
-  color: #3C3C3C;
-  display: block;
-  margin-left: 22px;
-  padding-top: 58px;
-  width: 142px;
-  height: 0px;
-  overflow: hidden;
-  text-indent: -9999px;
-  background: url(../img/logo.png) no-repeat 0 0;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -54,71 +19,32 @@ body a {
   color: #6C6C6C;
 }
 
-footer {
-  width: 1190px;
-  height: 180px;
+.topbar-register {
+  width: 818px;
   margin: 0 auto;
-  margin-top: 50px;
-  background-color: #fff;
+  padding: 30px 0 0;
+  position: relative;
+  z-index: 10;
 }
 
-footer p {
-  padding-bottom: 8px;
+.topbar-register {
+  padding: 22px 30px 45px;
+  height: 35px;
+  line-height: 35px;
+  color: #FFF;
 }
 
-footer span {
-  margin: 0 4px;
-  color: #9c9c9c;
+.topbar-register h1 {
+  float: left;
 }
 
-footer span a:hover {
-  color: #ff5000;
-}
-
-footer .tb-footer {
-  padding-top: 7px;
-  border-top: 1px solid #ddd;
-}
-
-footer .tb-footer p {
-  margin-bottom: 8px;
-  line-height: 27px;
-  border-bottom: 1px solid #ddd;
-}
-
-footer b {
-  margin: 0 3px;
-  font-weight: 400;
-  color: #ddd;
-}
-
-footer .tb-footer a {
-  white-space: nowrap;
-  color: #6c6c6c;
+.topbar-register a {
+  color: #FFF;
   text-decoration: none;
-}
-
-footer .tb-footer-bd a {
-  white-space: nowrap;
-  color: #6c6c6c;
-  text-decoration: none;
-}
-
-footer em {
-  color: #9c9c9c;
-  margin-left: 30px;
-  font-style: normal;
-}
-
-footer .tb-footer-mod {
-  display: inline-block;
-  vertical-align: middle;
-  background: url(../img/foot.jpg) no-repeat;
 }
 
 #wrap {
   height: 550px;
-  background-image: url(4.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   position: relative;
@@ -136,7 +62,7 @@ footer .tb-footer-mod {
 .logC a input {
   width: 100%;
   height: 45px;
-  background-color: #ee7700;
+  background-color: #e90303;
   border: none;
   color: white;
   font-size: 18px;
@@ -151,7 +77,7 @@ footer .tb-footer-mod {
 
 #wrap .logGet .logD.logDtip {
   width: 86%;
-  border-bottom: 1px solid #ee7700;
+  border-bottom: 1px solid #e90303;
   margin-bottom: 60px;
   margin-top: 0px;
   margin-right: auto;
@@ -185,6 +111,43 @@ footer .tb-footer-mod {
   margin-right: auto;
   margin-bottom: 0px;
   margin-left: auto;
+}
+
+footer .copyright {
+  padding: 0 0 30px 0;
+  text-align: center;
+}
+footer .copyright .wrap {
+  width: 1190px;
+  margin: 0 auto;
+}
+footer .copyright .wrap a {
+  text-decoration: none;
+  color: #666;
+  margin: 0 3px;
+}
+footer .copyright .wrap ul {
+  width: 826px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+footer .copyright .wrap ul li {
+  float: left;
+  width: 70px;
+  text-align: center;
+  height: 12px;
+  line-height: 12px;
+  border-right: 1px solid #DDD;
+  text-align: center;
+  margin-right: -1px;
+}
+footer .copyright .wrap .text {
+  padding: 24px 0 15px 0;
+  color: #999;
+}
+footer .copyright .wrap .link a img {
+  width: 108px;
+  height: 40px;
 }
 
 /*# sourceMappingURL=login.css.map */

@@ -20,7 +20,7 @@ define([], function() {
                 $.ajax({
                         type: 'post',
                         async: 'false',
-                        url: 'http://localhost/p/xiangmu/php/registry.php',
+                        url: 'http://localhost/xiangmu/projectname/php/registry.php',
                         data: {
                             name: $(this).val()
                         }
