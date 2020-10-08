@@ -4,12 +4,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>购物车</title>
+    <link rel="stylesheet" href="css/cart.css">
     <script src="script/require.js" data-main="script/main.js" defer async="true" id="currentpage" data-page="cart_module"></script>
 </head>
 
 <body>
-    这里就是购物车页
+    <!-- 头信息 -->
+    <div class="header">
+        <div class="wrap">
+            <span class="welcome">欢迎来到完美世界周边商城！</span>
+            <div class="header-cart">
+                <a href="cart.html" class="text"><span class="icon"></span>购物车（<span class="cartNum">0</span>）</a>
+                <!--//js <div class="cart_list"></div> -->
+            </div>
+            <dl>
+                <dt><a href="#" class="">我的订单</a></dt>
+                <dd><a href="#" class="">我的关注</a></dd>
+            </dl>
+            <dl class="userlogin">
+                <dt><a href="login.html" class="">登录</a></dt>
+                <dd><a href="registry.html" target="_blank">注册</a></dd>
+            </dl>
+        </div>
+    </div>
+    <!-- 顶部导航 -->
+    <div class="top_nav">
+        <div class="wrap cf">
+            <a href="#" class="f_left logo logo_wm"><img src="http://static.wanmei.com/shop/images/logo_wm.png" width="120" height="41" alt="" title="完美商城"></a>
+            <a href="#" class="f_left logo logo_shop"><img src="http://static.wanmei.com/shop/images/logo_shop.png" width="55" height="27" alt="" title="完美商城"></a>
+            <div class="f_left all_wares">
+                <p class="text"><span></span>全部商品</p>
+                <ul>
+                    <li>
+                        <a href="list.html" class="ellipsis2" target="_blank" title="DOTA2神秘商店">DOTA2神秘商店<em></em></a>
+                        <dl>
+                            <dd><a href="#">手办扭蛋</a></dd>
+                            <dd><a href="#">创意T恤</a></dd>
+                            <dd><a href="#">焕新服饰</a></dd>
+                            <dd><a href="#">生活用品</a></dd>
+                            <dd><a href="#">毛绒合辑</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="list.html" target="_blank" class="ellipsis2">完美世界周边<em></em></a>
+                        <dl>
+                            <dd><a href="#">梦间集周边</a></dd>
+                            <dd><a href="#">诛仙3专区</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="list.html" target="_blank" class="ellipsis2">CSGO正版周边<em></em></a>
+                    </li>
+                    <li>
+                        <a href="list.html" target="_blank" class="ellipsis2">姜小虎系列周边<em></em></a>
+                    </li>
+                    <li>
+                        <a href="list.html" target="_blank" class="ellipsis2">游戏外设<em></em></a>
+                        <dl>
+                            <dd><a href="#">键盘</a></dd>
+                            <dd><a href="#">鼠标</a></dd>
+                            <dd><a href="#">耳机</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="#">神魔大陆手游<em></em></a>
+                    </li>
+                    <li>
+                        <a href="#">手作<em></em></a>
+                        <dl>
+                            <dd><a href="#">可家手作</a></dd>
+                            <dd><a href="#">予礼</a></dd>
+                            <dd><a href="#">kris</a></dd>
+                            <dd><a href="#">玩皮工作室</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <ul class="nav f_left">
+                <li><a href="#">首页</a></li>
+                <li><a href="#" target="_blank">完美世界周边</a></li>
+                <li><a href="http://secretshop.dota2.com.cn/" target="_blank">DOTA2专区</a></li>
+                <li><a href="/faq" target="_blank">FAQ</a></li>
+            </ul>
+
+            <div class="f_right header_search">
+                <form action="" method="get" class="formsearch">
+                    <input type="text" class="text">
+                    <input type="button" class="btn">
+                    <span class="keyword">
+                        <a href="list.html" class="tj_link" target="_blank">武林手机支架</a>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- small导航 -->
+    <div class="nav_bar">
+        <div class="wrap">
+            <a href="index.html">首页</a> &gt; <a href="detail.html">我的购物车</a>
+        </div>
+    </div>
+
+    <!-- cart_content -->
+    <div class="cart-wrap" style="display: block;">
+        <div class="w">
+            <div id="jd-cart">
+                <div class="cartmain">
+                    <div class="cart-thead">
+                        <div class="cart-col t-checkbox">
+                            <div class="cart-checkbox">
+                                <input type="checkbox" checked="" name="" id="" class="allsel" value="" /> 全选
+                            </div>
+                        </div>
+                        <div class="cart-col t-goods">商品名称</div>
+                        <div class="cart-col t-props"></div>
+
+                        <div class="cart-col t-quantity">数量</div>
+                        <div class="cart-col t-sum">价格</div>
+                        <div class="cart-col t-action">操作</div>
+                    </div>
+                    <div id="cart-list">
+                        <div class="cart-item-list">
+                            <div class="cart-tbody">
+                                <!-- 显示购物车列表 -->
+                                <div class="item-list">
+                                    <div class="goods-item goods-item-sele" style="display: none;">
+                                        <div class="goods-info">
+                                            <div class="cell b-checkbox">
+                                                <div class="cart-checkbox">
+                                                    <input type="checkbox" checked="" name="" id="" value="" class="dx" />
+                                                    <span class="line-circle"></span>
+                                                </div>
+                                            </div>
+                                            <div class="cell b-goods">
+                                                <div class="goods-name">
+                                                    <div class="goods-pic">
+                                                        <a href=""><img src="" alt="" /></a>
+                                                    </div>
+                                                    <div class="goods-msg">
+                                                        <div class="goods-d-info">
+                                                            <a href="">Apple iMac 27英寸一体机（Core i5
+                                                                处理器/8GB内存/1TB存储/2GB独显/Retina 5K屏 MK462CH/A）</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="cell b-price" style="display: none;">
+                                                <strong>13488.00</strong>
+                                                <div class="sales-promotion-dropdown">
+                                                </div>
+                                            </div>
+                                            <div class="cell b-quantity">
+                                                <div class="quantity-form">
+                                                    <a class="quantity-down" href="javascript:void(0)">-</a>
+                                                    <input type="text" value="1" />
+                                                    <a class="quantity-add" href="javascript:void(0)">+</a>
+                                                </div>
+                                            </div>
+                                            <div class="cell b-sum">
+                                                <strong>13488.00</strong>
+                                            </div>
+                                            <div class="cell b-action">
+                                                <a href="javascript:;">X</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="cart-floatbar">
+                <div class="select-all">
+                    <div class="cart-checkbox">
+                        <input type="checkbox" checked="" name="" id="" class="allsel" value="" /> 全选
+                    </div>
+                </div>
+                <div class="operation">
+                    <a href="javascript:;">删除</a>
+                </div>
+                <div class="toolbar-right">
+                    <div class="btn-area">
+                        <a href="javascript:;">结算</a>
+                    </div>
+                    <div class="price-sum">
+                        <span class="totalprice">0.00</span>
+                        <span class="txt">合计：</span>
+                    </div>
+                    <div class="amount-sum">
+                        共
+                        <em>0</em> 件商品
+                        <b></b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

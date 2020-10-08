@@ -2,11 +2,6 @@ define(['jcookie'], function() {
     return {
         init: function() {
             let datasid = location.search.substring(1).split('=')[1];
-            const spic = $('.big-p'); //小图
-            const bpic = $('#bpic'); //大图
-            const sf = $('#sf'); //小放
-            const bf = $('#bf'); //大放
-
             if (!datasid) {
                 datasid = 1;
             }
@@ -18,10 +13,10 @@ define(['jcookie'], function() {
                 dataType: 'json'
             }).done((data) => {
                 let objdata = data;
-                $('#smallpic').attr('src', objdata.url);
-                $('.title').html(objdata.title);
+                $('.bd .tempWrap ul li img').attr('src', objdata.url);
+                $('.hd  ul li img').attr('src', objdata.url);
+                $('.title h1').html(objdata.title);
                 $('.price').html(objdata.price);
-                $('#bpic').attr('src', objdata.url);
                 let arr = objdata.piclisturl.split(',');
                 let strhtml = '';
                 $.each(arr, function(index, value) {
@@ -29,109 +24,42 @@ define(['jcookie'], function() {
                 <li><img src="${value}"/></li>
             `;
                 });
-
-                $('.s-p').html(strhtml);
-
-                hidearrow();
+                $('.bd ul').html(strhtml);
+                $('.hd ul').html(strhtml);
+                lb();
             });
-            //4.放大镜
-            spic.hover(function() {
-                sf.css({
-                    visibility: 'visible'
+
+            function lb() {
+                $('.hd ul li:nth-of-type(1)').addClass("select");
+                let $liW = $('.bd ul li').first().width();
+                let index = null;
+                $('.bd ul').width($('.bd ul li').size() * $liW + 'px');
+                $(".hd ul li").click(function() { //小圆点切换图片
+                    index = $(this).index() - 1;
+                    move();
                 });
-                bf.css({
-                    visibility: 'visible'
-                });
-                sf.css({
-                    width: spic.outerWidth() * bf.outerWidth() / bpic.outerWidth(),
-                    height: spic.outerHeight() * bf.outerHeight() / bpic.outerHeight()
-                });
-                let bili = bpic.outerWidth() / spic.outerWidth();
-                spic.on('mousemove', function(e) {
-                    let left = e.pageX - $('.big-p').offset().left - sf.width() / 2;
-                    let top = e.pageY - $('.big-p').offset().top - sf.height() / 2;
-                    if (left <= 0) {
-                        left = 0;
-                    } else if (left >= spic.width() - sf.width()) {
-                        left = spic.width() - sf.width();
+                let $timer = setInterval(move, 3000); //自动轮播
+                function move() { //右移
+                    index++;
+                    if (index === $(".hd ul li").length) {
+                        $('.bd ul').css({
+                            left: 0
+                        })
+                        index = 0
                     }
-
-                    if (top <= 0) {
-                        top = 0;
-                    } else if (top >= spic.height() - sf.height()) {
-                        top = spic.height() - sf.height();
+                    if (index === $(".hd ul li").length) {
+                        $(".hd ul li").eq(0).addClass("select").siblings().removeClass("select");
                     }
-
-                    sf.css({
-                        left: left,
-                        top: top
+                    $(".hd ul li").eq(index).addClass("select").siblings().removeClass("select");
+                    $(".bd ul").stop(true).animate({ left: -$liW * index });
+                };
+                $(".gallery").hover(function() { //鼠标移入暂停，移出继续
+                        clearInterval($timer);
+                    },
+                    function() {
+                        $timer = setInterval(move, 3000);
                     });
-                    bpic.css({
-                        left: -bili * left,
-                        top: -bili * top
-                    });
-                });
-            }, function() {
-                sf.css({
-                    visibility: 'hidden'
-                });
-                bf.css({
-                    visibility: 'hidden'
-                });
-            });
-
-            $('.s-p').on('click', 'li', function() {
-                let picurl = $(this).find('img').attr('src');
-                spic.find('img').attr('src', picurl);
-                bpic.attr('src', picurl);
-            });
-
-            let piclen = 6;
-
-            function hidearrow() {
-                if ($('.s-p  li').size() <= piclen) {
-                    $('#right').css({
-                        color: '#fff'
-                    })
-                }
             }
-
-            $('#right').on('click', function() {
-                let liwidth = $('.s-p  li').eq(0).outerWidth(true);
-                if ($('.s-p  li').size() > piclen) {
-                    piclen++;
-                    $('#left').css({
-                        color: '#333'
-                    });
-                    if (piclen === $('.s-p  li').size()) {
-                        $('#right').css({
-                            color: '#fff'
-                        });
-                    }
-                    $('.s-p ').animate({
-                        left: -(piclen - 6) * liwidth
-                    });
-                }
-            });
-
-            $('#left').on('click', function() {
-                let liwidth = $('.s-p  li').eq(0).outerWidth(true);
-                if (piclen > 6) {
-                    piclen--;
-                    $('#right').css({
-                        color: '#333'
-                    });
-                    if (piclen === 6) {
-                        $('#left').css({
-                            color: '#fff'
-                        });
-                    }
-                    $('.s-p ').animate({
-                        left: -(piclen - 6) * liwidth
-                    });
-                }
-            });
-
 
             let arrsid = [];
             let arrnum = [];
@@ -143,21 +71,27 @@ define(['jcookie'], function() {
                 }
             }
 
-            $('.add-btn a').on('click', function() {
+            $('.btn_addCart').on('click', function() {
+                console.log(1);
                 getcookie();
                 if ($.inArray(datasid, arrsid) === -1) {
                     arrsid.push(datasid);
                     $.cookie('cookiesid', arrsid, 10);
-                    arrnum.push($('#count').val());
+                    arrnum.push($('.amount input').val());
                     $.cookie('cookienum', arrnum, 10)
                 } else {
                     let sidindex = $.inArray(datasid, arrsid);
-                    let newarrnum = parseInt(arrnum[sidindex]) + parseInt($('#count').val());
+                    let newarrnum = parseInt(arrnum[sidindex]) + parseInt($('.amount input').val());
                     arrnum[sidindex] = newarrnum;
                     $.cookie('cookienum', arrnum, 10);
                 }
                 alert('商品已加入购物车');
             });
+
+
+
+
+
         }
     }
 

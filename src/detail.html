@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>详情</title>
-    <link rel="stylesheet" href="./css/detail.css">
+    <link rel="stylesheet" href="css/detail.css">
     <script src="script/require.js" data-main="script/main.js" defer async="true" id="currentpage" data-page="detail_module"></script>
 </head>
 
@@ -94,7 +94,7 @@
                     <input type="button" class="btn">
                     <span class="keyword">
                         <a href="list.html" class="tj_link" target="_blank">武林手机支架</a>
-                    </span>
+                     </span>
                 </form>
             </div>
         </div>
@@ -106,51 +106,78 @@
             <a href="index.html">首页</a> &gt; <a href="detail.html">商品详情</a>
         </div>
     </div>
-    <!--  -->
-    <div class="detail">
-        <div class="left-p">
-            <div class="pic-wrap">
-                <div class="big-p">
-                    <img src="" alt="" id="smallpic">
-                    <div id="sf"></div>
-                </div>
-                <div id="bf">
-                    <img src="" alt="" id="bpic">
-                </div>
-                <a href="javascript:;" id="left">&lt;</a>
-                <ul class="s-p">
+    <!--goods_detail  -->
+    <div class="goods_detail">
+        <div class="wrap">
+            <div class="gallery">
+                <div class="picFocus">
+                    <div class="bd">
 
-                </ul>
-                <a href="javascript:;" id="right">&gt;</a>
+                        <div class="tempWrap">
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="hd">
+                        <ul>
+
+
+
+                        </ul>
+                    </div>
+                </div>
+
             </div>
-        </div>
-        <div class="right-con">
-            <div class="content">
-                <h3 class="title"></h3>
-                <div class="price-wrap">
-                    <span class="j">淘宝价</span>
-                    <div class="price-out">
-                        <strong class="p-style">
-                            <span class="dol">￥</span>
-                            <i class="price"></i>
-                        </strong>
-                    </div>
+            <div class="property ">
+                <div class="title">
+                    <h1></h1>
+
+                    <p>情撼九天，一剑诛仙，双生组合项链。设计精巧，造型美观大气。</p>
+
                 </div>
-                <div class="amount">
-                    <span class="n">数量</span>
-                    <input type="text" id="count" value="1">
-                </div>
-                <div class="buyAndadd">
-                    <div class="buy-btn">
-                        <a href="cart.html">立即购买</a>
-                    </div>
-                    <div class="add-btn">
-                        <a href="javascript:;">加入购物车</a>
-                    </div>
+
+                <p id="productShowPrice">
+                    <span>¥</span><span class="price"></span>
+                </p>
+
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <table style="margin-left: -4px;" id="product_sku_table">
+
+                                </table>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>数量：</th>
+                            <td>
+                                <span class="amount number-input"><input id="buyNumber" type="text" value="1" min="1" stock="99" maxlength="3" style="ime-mode: disabled;" autocomplete="off"></span>
+                            </td>
+                        </tr>
+
+
+
+
+
+                    </tbody>
+                </table>
+                <div class="btns">
+
+
+
+                    <a href="cart.html" class="buy btn_buy">立即购买</a>
+                    <a href="javascript:void(0)" class="add btn_addCart"><span></span>加入购物车</a>
+
+
                 </div>
             </div>
         </div>
     </div>
+
 
 </body>
 
